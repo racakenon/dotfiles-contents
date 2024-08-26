@@ -1,0 +1,46 @@
+(defcfg
+  danger-enable-cmd yes
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12 f13 f14 volu vold prtsc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     del  end  pgdn
+  lctl a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft            up
+  caps lmet lalt           spc            ralt rmet rctl            left down rght
+)
+
+
+(deflocalkeys-linux
+  🇰🇷 122
+  漢   123
+)
+
+
+(defalias
+    bro (cmd vivaldi-stable)
+    ter (cmd wezterm)
+    la1 (layer-while-held func)
+    vup (cmd wpctl set-volume @DEFAULT_SINK@ 5%+)
+    vdn (cmd wpctl set-volume @DEFAULT_SINK@ 5%-)
+    fig (cmd bash -c "maim -s $(date +%Y-%m-%d-%H-%M-%S).png")
+    )
+
+(deflayer base
+  _    _    _    _    _    _    _    _    _    _    _    _    _    @bro @ter @vup @vdn @fig
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _   _ 
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _               _
+  @la1    _    _              _                🇰🇷 _    漢         _    _    _
+)
+
+(deflayer func
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _ _ _  _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     @bro _    XX
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     @ter _    XX
+  _    _    @fig _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _               @vup
+  _    _    _              _                  🇰🇷  _   漢           _   @vdn _
+)

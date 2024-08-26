@@ -1,0 +1,64 @@
+* {
+  all: unset;
+}
+
+.bar0 {
+  background-color: rgba(35, 35, 51, 0.3);
+  padding: 1px;
+  margin: 0px;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D35D6E;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #f9f5d7;
+  color: #1d2021;
+  font-size: 20px;
+}
+
+.time {
+    font-size: 20px;
+    color: #f9f5d7;
+}
+
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 100px;
+  min-height: 15px;
+  min-width: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.workspaces {
+  margin-left: 20px;
+}
+.workspaces button {
+  font-size: 20px;
+  padding: 4px;
+}
+.workspaces button:hover {
+  color: #b8bb26;
+}
+.ws-button-mine {
+  color: #f9f5d7;
+  background-color: #458588;
+}
+.ws-button-visible {
+  color: #b8bb26;
+  background-color: #4e4e4e;
+}
+
+.ws-button-busy {
+  color: #98971a;
+}
+.ws-button {
+  color: #f9f5d7;
+}

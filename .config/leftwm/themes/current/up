@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+eww daemon &
+picom --experimental-backends &> /dev/null &
+leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
+feh --bg-fill $SCRIPTPATH/background.jpg
+sleep 1
+index=0
+sizes=( $(leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' ) )
+for size in "${sizes[@]}"
+do
+    eww open bar$index
+  let index=index+1
+done
