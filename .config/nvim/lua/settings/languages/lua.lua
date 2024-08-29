@@ -11,7 +11,7 @@ local root_files = {
 }
 local cmd = { 'lua-language-server' }
 
-require 'settings.languages.lsp'.setup('lua', root_files, cmd, {
+require 'settings.languages.lsp'.setup('lua', 'lua-language-server', root_files, cmd, {
 	settings = {
 		Lua = {
 			workspace = {

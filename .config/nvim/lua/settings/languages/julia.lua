@@ -28,4 +28,4 @@ local cmd = {
   ]],
 }
 
-require 'settings.languages.lsp'.setup('julia', root_files, cmd, {})
+require 'settings.languages.lsp'.setup('julia', 'julials', root_files, cmd, {})

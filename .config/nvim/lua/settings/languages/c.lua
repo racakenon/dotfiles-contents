@@ -9,4 +9,4 @@ local root_files = {
 }
 local cmd = { 'clangd' }
 
-require 'settings.languages.lsp'.setup('c', root_files, cmd, {})
+require 'settings.languages.lsp'.setup('c', 'clangd', root_files, cmd, {})

@@ -7,7 +7,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		opts = { buffer = ev.buf }
 		vim.keymap.set('n', '<space>d', vim.lsp.buf.definition, opts)
 		vim.keymap.set('n', '<space>n', vim.lsp.buf.rename, opts)
-		vim.keymap.set('n', '<space>h', vim.lsp.buf.hover, opts)
+		vim.keymap.set('n', '<space>h', function ()
+			vim.lsp.buf.hover()
+		end, opts)
 		vim.keymap.set('n', '<space>r', vim.lsp.buf.references, opts)
 		vim.keymap.set('n', '<space>i', vim.lsp.buf.implementation, opts)
 		vim.keymap.set('n', '<space>D', vim.lsp.buf.declaration, opts)
@@ -21,6 +23,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end,
 })
 
+vim.keymap.del('n', ']d')
+vim.keymap.del('n', '[d')
+
+vim.keymap.set('n', ']d', function()
+	vim.diagnostic.goto_next({ float = true })
+end, { desc = 'Jump to the next diagnostic' })
+
+vim.keymap.set('n', '[d', function()
+	vim.diagnostic.goto_prev({ float = true })
+end, { desc = 'Jump to the previous diagnostic' })
+
 vim.api.nvim_create_user_command('LspLog',
 	function()
 		vim.cmd(string.format('tabnew %s', vim.lsp.get_log_path()))
@@ -30,11 +43,17 @@ vim.api.nvim_create_user_command('LspLog',
 	}
 )
 
+vim.diagnostic.config({
+	float = {
+		border = "rounded"
+	},
+})
+
 local M = {}
 
-function M.setup(name, root_files, cmd, settings)
+function M.setup(filetype, name, root_files, cmd, settings)
 	vim.api.nvim_create_autocmd('FileType', {
-		pattern = name,
+		pattern = filetype,
 		callback = function(args)
 			local root_dir = vim.fs.root(args.buf, root_files)
 			if vim.bo.buftype == "" then
@@ -46,7 +65,10 @@ function M.setup(name, root_files, cmd, settings)
 						require('cmp_nvim_lsp').default_capabilities()),
 					handlers = {
 						['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-							border = "rounded"
+							style = "minmal",
+							max_width = 80,
+							border = "rounded",
+							focuse = true,
 						})
 					}
 				}, settings))

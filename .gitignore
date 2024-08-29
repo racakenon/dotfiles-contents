@@ -1,2 +1,2 @@
 .dotfiles
-*.lock
+lazy-lock.json
