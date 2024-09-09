@@ -9,6 +9,7 @@ vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.spell = true
 -- 6
+vim.opt.laststatus = 3
 -- 7
 -- 8
 -- 9

@@ -1,22 +1,43 @@
 local p = require "gruvbox".palette
 local icon = require("nvim-web-devicons")
 
+local function fileformat()
+	local fformat = vim.bo.fileformat
+	local fficon = ""
+	if fformat == "unix" then
+		fficon = ""
+	elseif fformat == "dos" then
+		fficon = ""
+	else
+		fficon = ""
+	end
+	return fficon
+end
+
+local CTRL_S = vim.api.nvim_replace_termcodes('<C-S>', true, true, true)
+local CTRL_V = vim.api.nvim_replace_termcodes('<C-V>', true, true, true)
+
+local modes = {
+	['n']    = { 'Normal', '%#MiniStatuslineModeNormal#' },
+	['v']    = { 'Visual', '%#MiniStatuslineModeVisual#' },
+	['V']    = { 'V-Line', '%#MiniStatuslineModeVisual#' },
+	[CTRL_V] = { 'V-Block', '%#MiniStatuslineModeVisual#' },
+	['s']    = { 'Select', '%#MiniStatuslineModeVisual#' },
+	['S']    = { 'S-Line', '%#MiniStatuslineModeVisual#' },
+	[CTRL_S] = { 'S-Block', '%#MiniStatuslineModeVisual#' },
+	['i']    = { 'Insert', '%#MiniStatuslineModeInsert#' },
+	['R']    = { 'Replace', '%#MiniStatuslineModeReplace#' },
+	['c']    = { 'Command', '%#MiniStatuslineModeCommand#' },
+	['r']    = { 'Prompt', '%#MiniStatuslineModeOther#' },
+	['!']    = { 'Shell', '%#MiniStatuslineModeOther#' },
+	['t']    = { 'Terminal', '%#MiniStatuslineModeOther#' },
+}
+
+
+
 local function mode()
-	local modes = {
-		["n"] = { "n", "%#MiniStatuslineModeNormal#" },
-		["v"] = { "v", "%#MiniStatuslineModeVisual#" },
-		["V"] = { "V", "%#MiniStatuslineModeVisual#" },
-		["s"] = { "s", "%#MiniStatuslineModeOther#" },
-		["S"] = { "S", "%#MiniStatuslineModeOther#" },
-		["i"] = { "i", "%#MiniStatuslineModeInsert#" },
-		["R"] = { "R", "%#MiniStatuslineModeOther#" },
-		["c"] = { "c", "%#MiniStatuslineModeCommand#" },
-		["r"] = { "r", "%#MiniStatuslineModeOther#" },
-		["!"] = { "!", "%#MiniStatuslineModeCommand#" },
-		["t"] = { "t", "%#MiniStatuslineModeOther#" },
-	}
 	local currnet_mode = modes[vim.fn.mode(0)]
-	return currnet_mode[2] .. " " .. currnet_mode[1] .. " "
+	return currnet_mode[2] .. " " .. fileformat() .. " | " .. currnet_mode[1] .. " " .. "%#StatusLine#"
 end
 
 local function lsp()
@@ -29,7 +50,7 @@ local function lsp()
 		end
 		return table.concat(lspname, " ") .. " "
 	end
-	return ""
+	return "no active lsp"
 end
 
 local function diagnostic()
@@ -42,35 +63,37 @@ local function diagnostic()
 	vim.api.nvim_set_hl(0, "Warning", { fg = p.faded_yellow, bg = p.light2, bold = true, })
 	vim.api.nvim_set_hl(0, "Info", { fg = p.faded_blue, bg = p.light2, bold = true, })
 	vim.api.nvim_set_hl(0, "Hint", { fg = p.faded_aqua, bg = p.light2, bold = true, })
-	return "%#Error#" .. errors .. "%#Warning#" .. warnings .. "%#Hint#" .. hints .. "%#Info#" .. info
+	return "%#Error#" .. " " .. errors ..
+		"%#Warning#" .. "  " .. warnings ..
+		"%#Hint#" .. "  " .. hints ..
+		"%#Info#" .. "  " .. info .. "%#StatusLine# "
 end
 
-local function filetype()
+local function lspname()
 	local ftype = vim.bo.filetype
 	local symbol, symbol_color = icon.get_icon_color_by_filetype(ftype, { default = true })
 	vim.api.nvim_set_hl(0, "symbol_color", { fg = symbol_color, bg = p.light2, bold = true, })
-	local fencoding = vim.bo.fenc
-	local fformat = vim.bo.fileformat
-	return "%#symbol_color#" ..
-		symbol .. " %#StatusLine#" .. ftype:upper() .. " " .. fencoding:upper() .. " " .. fformat:upper()
+	local fencoding = vim.bo.fenc == "utf-8" and "" or vim.bo.fenc .. " "
+	return " %#symbol_color#" .. symbol .. "%#StatusLine#" .. " " .. lsp() .. fencoding:upper()
 end
 
 local function lineinfo()
+	local ftype = vim.bo.filetype
+	local currnet_mode = modes[vim.fn.mode(0)]
 	if vim.bo.filetype == "alpha" then
 		return ""
 	end
-	return "%5l/%L "
+	return currnet_mode[2] .. "%5l/%L | " .. ftype:upper() .. " "
 end
 
 local active = function()
 	return table.concat {
 		mode(),
-		lsp(),
-		"%#StatusLine#",
+		lspname(),
+		"%=",
 		" %f %m %r %h",
 		"%=",
 		diagnostic(),
-		filetype(),
 		lineinfo(),
 	}
 end

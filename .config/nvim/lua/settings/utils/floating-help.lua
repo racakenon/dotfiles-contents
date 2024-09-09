@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
 		if buf ~= nil and vim.bo[buf].filetype == 'help' then
 			local current_help_win = vim.api.nvim_get_current_win()
 			local opts = {
-				width = 78,
+				width = 80,
 				height = vim.opt.lines:get() - 6,
 				window_opts = {
 					border = 'rounded',
