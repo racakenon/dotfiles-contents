@@ -1,64 +1,165 @@
-* {
-  all: unset;
-}
-
-.bar0 {
-  background-color: rgba(35, 35, 51, 0.3);
-  padding: 1px;
+.statusbar {
+  background-color: rgba(40, 40, 40, 0.6);
+  border-radius: 30px;
+  padding: 5px;
   margin: 0px;
 }
 
-.metric scale trough highlight {
-  all: unset;
-  background-color: #D35D6E;
-  font-size: 20px;
-  border-radius: 10px;
-}
-
-.metric scale trough highlight {
-  all: unset;
-  background-color: #f9f5d7;
-  color: #1d2021;
-  font-size: 20px;
-}
-
 .time {
-    font-size: 20px;
-    color: #f9f5d7;
+  color: rgba(235, 219, 178);
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws{
+  margin: 0 10 0 10;
+}
+
+.ws-button-active-1 {
+  all: unset;
+  color: rgba(184,187,38); 
+  border: 1px solid rgba(184,187,38);
+  border-radius: 50%;
+  margin: 0 8 0 8;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-active-2 {
+  all: unset;
+  color: rgb(142, 192, 124);
+  border: 1px solid rgba(142, 192, 124);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-active-3 {
+  all: unset;
+  color: rgba(250, 189, 47);
+  border: 1px solid rgba(250, 189, 47);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-active-4 {
+  all: unset;
+  color: rgba(7, 118, 120);
+  border: 1px solid rgba(7, 118, 120);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-busy-1 {
+  all: unset;
+  color: rgba(184, 187, 38);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-busy-2 {
+  all: unset;
+  color: rgb(142, 192, 124);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-busy-3 {
+  all: unset;
+  color: rgba(250, 189, 47);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-busy-4 {
+  all: unset;
+  color: rgba(7, 118, 120);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-1 {
+  all: unset;
+  color: rgba(235, 219, 178);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-2 {
+  all: unset;
+  color: rgba(235, 219, 178);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-3 {
+  all: unset;
+  color: rgba(235, 219, 178);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.ws-button-4 {
+  all: unset;
+  color: rgba(235, 219, 178);
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
+  font-size: 15pt;
+  font-family: KoPubWorldBatang_Pro;
+}
+
+.sidestuff slider {
+  all: unset;
+}
+
+.label{ 
+  font-size: 25px;
+  color: rgba(235, 219, 178);
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #fe8019;
+  border-radius: 10px;
 }
 
 .metric scale trough {
   all: unset;
-  background-color: #4e4e4e;
-  border-radius: 100px;
+  background-color: #fbf1c7;
+  border-radius: 50px;
   min-height: 15px;
-  min-width: 200px;
-  margin-left: 10px;
-  margin-right: 10px;
+  min-width: 100px;
+  margin: 0 10px 0 10px;
 }
 
-.workspaces {
-  margin-left: 20px;
-}
-.workspaces button {
-  font-size: 20px;
-  padding: 4px;
-}
-.workspaces button:hover {
-  color: #b8bb26;
-}
-.ws-button-mine {
-  color: #f9f5d7;
-  background-color: #458588;
-}
-.ws-button-visible {
-  color: #b8bb26;
-  background-color: #4e4e4e;
-}
-
-.ws-button-busy {
-  color: #98971a;
-}
-.ws-button {
-  color: #f9f5d7;
-}

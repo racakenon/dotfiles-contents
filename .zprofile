@@ -1,3 +1,6 @@
-if [[ -z $DISPLAY ]]; then
-startx
-fi
+#!/bin/sh
+pipewire &
+pipewire-pulse &
+wireplumber &
+niri --session&
+$HOME/.config/niri/swww-switch&

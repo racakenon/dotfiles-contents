@@ -1,0 +1,3 @@
+#!/bin/sh
+fname=$(date +"%Y-%m-%d-%H-%M-%S").mp4
+wl-screenrec -f $fname

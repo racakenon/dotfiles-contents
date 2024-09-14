@@ -1,0 +1,23 @@
+#!/bin/sh
+output=$(niri msg --json workspaces | jq 'sort_by(.id) | map(select(.name != null))')
+while read -r is_active id name has_window; do
+	if [[ $is_active == '"true' ]]; then
+		case $id in
+	1)
+		swww img -t none  --resize fit $HOME/spring.jpg
+		;;
+	2)
+		swww img -t none  --resize fit $HOME/summer.jpg
+		;;
+	3)
+		swww img -t none  --resize fit $HOME/autum.jpg
+		;;
+	4)
+		swww img -t none  --resize fit $HOME/winter.jpg
+		;;
+	*)
+		;;
+		esac
+	fi
+done <<< $(niri msg --json workspaces | jq '.[] | [.is_active,.id,.name,.active_window_id] | join(" ")')
+echo $output

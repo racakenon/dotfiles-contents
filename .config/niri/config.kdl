@@ -1,0 +1,72 @@
+layout {
+    gaps 10
+    center-focused-column "never"
+    default-column-width { proportion 0.5; }
+    focus-ring {
+        off
+    }
+    border {
+        off
+    }
+}
+
+prefer-no-csd
+
+window-rule {
+    geometry-corner-radius 10
+	clip-to-geometry true
+}
+
+workspace "春"
+workspace "夏"
+workspace "秋"
+workspace "冬"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+spawn-at-startup "kime"
+spawn-at-startup  "swww-daemon"
+spawn-at-startup  "eww" "daemon"
+spawn-at-startup  "eww" "open" "statusbar"
+
+screenshot-path "~/%Y-%m-%d %H-%M-%S.png"
+
+animations {
+    off
+}
+
+binds {
+    Mod+Shift+W  { spawn "wezterm"; }
+    Mod+Shift+R  { spawn "~/.config/niri/record";}
+    Mod+Shift+S  { spawn "pkill" "wl-screenrec"; }
+    Mod+Shift+V { spawn "vivaldi" "--gtk-version=4" "--ozone-platform=wayland"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    Mod+Shift+Q { quit skip-confirmation=true; }
+	Mod+Shift+C { close-window; }
+	Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Down  { move-window-down; }
+    Mod+Shift+Up    { move-window-up; }
+    Mod+Shift+Right { move-column-right; }
+	Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+	Mod+1 { focus-workspace "春"; }
+    Mod+2 { focus-workspace "夏"; }
+    Mod+3 { focus-workspace "秋"; }
+    Mod+4 { focus-workspace "冬"; }
+    Mod+Shift+1 { move-column-to-workspace "春"; }
+    Mod+Shift+2 { move-column-to-workspace "夏"; }
+    Mod+Shift+3 { move-column-to-workspace "秋"; }
+    Mod+Shift+4 { move-column-to-workspace "冬"; }
+	Mod+F { maximize-column; }
+	Print { screenshot; }
+    Alt+Print { screenshot-window; }
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+    Mod+Comma  { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+}
