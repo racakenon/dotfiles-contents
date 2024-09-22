@@ -11,7 +11,7 @@ DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="true"
 HIST_STAMPS="yyyy/mm/dd"
 
-plugins=(git poetry extract copyfile copypath fzf encode64 k stack cabal zsh-interactive-cd zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git poetry extract copyfile copypath fzf encode64  stack cabal zsh-interactive-cd zsh-syntax-highlighting zsh-autosuggestions)
 
 
 source $ZSH/oh-my-zsh.sh

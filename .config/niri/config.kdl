@@ -1,13 +1,13 @@
 layout {
     gaps 10
     center-focused-column "never"
-    default-column-width { proportion 0.5; }
     focus-ring {
         off
     }
     border {
         off
     }
+	default-column-width { proportion 0.5; }
 }
 
 prefer-no-csd
@@ -16,7 +16,6 @@ window-rule {
     geometry-corner-radius 10
 	clip-to-geometry true
 }
-
 workspace "春"
 workspace "夏"
 workspace "秋"
@@ -30,6 +29,7 @@ spawn-at-startup "kime"
 spawn-at-startup  "swww-daemon"
 spawn-at-startup  "eww" "daemon"
 spawn-at-startup  "eww" "open" "statusbar"
+spawn-at-startup  "waydroid" "session" "start"
 
 screenshot-path "~/%Y-%m-%d %H-%M-%S.png"
 
@@ -39,6 +39,7 @@ animations {
 
 binds {
     Mod+Shift+W  { spawn "wezterm"; }
+    Mod+Shift+M  { spawn "~/.config/niri/waydroid"; }
     Mod+Shift+R  { spawn "~/.config/niri/record";}
     Mod+Shift+S  { spawn "pkill" "wl-screenrec"; }
     Mod+Shift+V { spawn "vivaldi" "--gtk-version=4" "--ozone-platform=wayland"; }

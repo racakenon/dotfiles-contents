@@ -1,5 +1,5 @@
 #!/bin/sh
 pipewire &
 wireplumber &
-niri --session&
+dbus-run-session niri --session&
 $HOME/.config/niri/swww-switch&
