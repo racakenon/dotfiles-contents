@@ -4,16 +4,16 @@ while read -r is_active id name has_window; do
 	if [[ $is_active == '"true' ]]; then
 		case $id in
 	1)
-		swww img -t none  --resize fit $HOME/spring.jpg
+		swww img -t none  --resize fit $HOME/.config/eww/spring.jpg
 		;;
 	2)
-		swww img -t none  --resize fit $HOME/summer.jpg
+		swww img -t none  --resize fit $HOME/.config/eww/summer.jpg
 		;;
 	3)
-		swww img -t none  --resize fit $HOME/autum.jpg
+		swww img -t none  --resize fit $HOME/.config/eww/autum.jpg
 		;;
 	4)
-		swww img -t none  --resize fit $HOME/winter.jpg
+		swww img -t none  --resize fit $HOME/.config/eww/winter.jpg
 		;;
 	*)
 		;;
