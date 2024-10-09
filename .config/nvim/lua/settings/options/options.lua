@@ -7,7 +7,6 @@ vim.opt.smartcase = true
 vim.opt.number = true
 -- 5
 vim.opt.cursorline = true
-vim.opt.spell = true
 -- 6
 vim.opt.laststatus = 3
 -- 7

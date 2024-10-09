@@ -55,6 +55,6 @@
               :anchor "top center"
               :width "130%")
   :exclusive true
-  :stacking "overlay"
+  :stacking "fg"
   (bar))
 

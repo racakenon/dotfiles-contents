@@ -7,10 +7,10 @@ function module.set(config)
 	config.keys = {
 		{ key = 'c',          mods = 'CTRL|SHIFT', action = wezterm.action.CopyTo 'Clipboard' },
 		{ key = 'v',          mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
-		{ key = 'h',          mods = 'CTRL|SHIFT', action = wezterm.action.SplitHorizontal { domain = 'DefaultDomain' }, },
+		{ key = '%',          mods = 'CTRL|SHIFT', action = wezterm.action.SplitHorizontal { domain = 'DefaultDomain' }, },
 		{ key = 'PageUp',     mods = 'CTRL|SHIFT', action = wezterm.action.ScrollByPage(-1) },
 		{ key = 'PageDown',   mods = 'CTRL|SHIFT', action = wezterm.action.ScrollByPage(1) },
-		{ key = 'Enter',      mods = 'CTRL|SHIFT', action = wezterm.action.SplitVertical { domain = 'DefaultDomain' }, },
+		{ key = '"',      mods = 'CTRL|SHIFT', action = wezterm.action.SplitVertical { domain = 'DefaultDomain' }, },
 		{ key = 'f',          mods = 'SHIFT|CTRL', action = wezterm.action.Search 'CurrentSelectionOrEmptyString' },
 		{ key = 'q',          mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentPane { confirm = true }, },
 		{ key = 'K',          mods = 'SHIFT|CTRL', action = wezterm.action.ClearScrollback 'ScrollbackOnly' },
@@ -18,6 +18,8 @@ function module.set(config)
 		{ key = 'RightArrow', mods = 'SHIFT|CTRL', action = wezterm.action.ActivatePaneDirection 'Right' },
 		{ key = 'UpArrow',    mods = 'SHIFT|CTRL', action = wezterm.action.ActivatePaneDirection 'Up' },
 		{ key = 'DownArrow',  mods = 'SHIFT|CTRL', action = wezterm.action.ActivatePaneDirection 'Down' },
+		{ key = 'n',  mods = 'SHIFT|CTRL', action = wezterm.action.ActivatePaneDirection 'Next' },
+		{ key = 'x',  mods = 'SHIFT|CTRL', action = wezterm.action.RotatePanes 'CounterClockwise' },
 	}
 	config.mouse_bindings = {
 		{
