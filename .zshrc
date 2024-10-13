@@ -23,6 +23,11 @@ alias rm="rm -rf"
 alias cp="cp -r"
 alias gc="git clone --depth 1"
 alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias l='eza -lah'
+alias la='eza -lAh'
+alias ll='eza -lh'
+alias ls='eza'
+alias lsa='eza -lah'
 
 swap ()
 {

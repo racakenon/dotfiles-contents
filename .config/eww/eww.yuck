@@ -53,7 +53,7 @@
   :geometry (geometry
               :y 5
               :anchor "top center"
-              :width "130%")
+              :width "90%")
   :exclusive true
   :stacking "fg"
   (bar))
