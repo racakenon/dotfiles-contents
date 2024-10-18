@@ -115,7 +115,7 @@ $env.config = {
 source keymap.nu
 source gruvbox.nu
 source ~/.cache/carapace/init.nu
-use ~/.cache/starship/init.nu
+use '~/.cache/starship/init.nu'
 
 alias vi = nvim
 alias gc = git clone --depth 1

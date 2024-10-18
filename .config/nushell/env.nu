@@ -25,6 +25,7 @@ $env.PATH = (
 	$env.PATH 
 	| split row (char esep) 
 	| append ($env.HOME | path join .cabal bin)
+	| append ($env.HOME | path join .cargo bin)
 	| append ($env.HOME | path join .ghcup bin)
 	| append ($env.HOME | path join .juliaup bin)
 	| append ($env.HOME | path join .local bin)
@@ -47,11 +48,14 @@ $env.PATH = (
 	| append ($env.HOME | path join .local share coursier bin)
 	| append ($env.HOME | path join .local node lts bin)
 )
-$env.STARSHIP_SHELL = "nu"
 $env.GOPATH = $env.HOME | path join .local go go
 $env.DOTNET_ROOT = $env.HOME | path join .local share dotnet
 $env.LS_COLORS = (vivid generate gruvbox-light-soft)
+$env.VIRTUAL_ENV_DISABLE_PROMPT = true
+
 mkdir ~/.cache/carapace
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
+$env.STARSHIP_SHELL = "nu"
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
