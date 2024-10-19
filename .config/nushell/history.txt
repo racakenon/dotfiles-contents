@@ -1,0 +1,87 @@
+exit
+ls
+cd ~
+ls
+exit
+ls
+cd ~
+ls
+cd ~
+ls
+pipewire &
+ls
+wireplumber &
+dot status 
+ls
+lr
+ls
+ll
+la
+cd .config/
+ls
+cd carapace/
+ls
+cd ..
+ls
+cd eww/
+ls
+vi scripts/getvol 
+cd ..
+ls
+cd ..
+ls
+systemctl enable bluetooth.service 
+ls
+clear
+ls
+ll
+vi .zprofile 
+sudo vi /etc/shells 
+chsh 
+exit
+ls
+exit
+clear
+vi .zprofile 
+vi .config/nushell/config.nu 
+vi .config/nushell/env.nu 
+exit
+exit
+vi .config/nushell/env.nu 
+vi  .zprofile 
+chomd +x .zprofile
+chmod +x .zprofile 
+exit
+vi .config/nushell/login.nu
+vi .config/nushell/env.nu 
+exit
+dot checkout .config/wezterm
+vi .config/wezterm/wezterm.lua 
+ls
+exit
+ls
+clear
+ls
+ll
+cd ~
+ls
+ll
+cd .config/
+ls
+cd niri/
+ls
+vi record 
+vi waydroid 
+vi record 
+cd ..
+ls
+cd eww/
+vi scripts/
+vi scripts/wmstate 
+vi scripts/getvol 
+dot diff
+dot status 
+git commit -a
+dot commit -a
+dot add ../nushell
+dot status 

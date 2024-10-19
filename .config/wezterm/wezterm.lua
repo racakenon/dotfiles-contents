@@ -7,7 +7,7 @@ config = {
     color_scheme = 'Gruvbox light, soft (base16)',
 	use_ime = true,
 	xim_im_name = "kime",
-	default_prog = {"/usr/bin/zsh"}
+	default_prog = {"nu"}
 }
 
 require 'shape'.set(config)
