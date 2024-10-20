@@ -1,4 +1,2 @@
-pipewire &
-wireplumber &
-dbus-run-session niri --session&
+dbus-run-session niri -- --session&
 $env.HOME/.config/niri/swww-switch&
