@@ -54,6 +54,7 @@ $env.LS_COLORS = (vivid generate gruvbox-light-soft)
 $env.VIRTUAL_ENV_DISABLE_PROMPT = true
 
 mkdir ~/.cache/carapace
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
 $env.STARSHIP_SHELL = "nu"
