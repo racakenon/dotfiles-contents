@@ -103,7 +103,7 @@ style              = 'bold fg:magenta bg:fg1'
 format             = '[ $tag\($hash\)]($style)'
 
 [git_status]
-format      = "[$ahead_behind$all_status](fg:bg0 bg:fg1)"
+format      = "[$ahead_behind$all_status ](fg:bg0 bg:fg1)"
 diverged    = "[  $ahead_count $behind_count](fg:magenta bg:fg1)"
 ahead       = "[  $count](fg:blue bg:fg1)"
 behind      = "[  $count](fg:red bg:fg1)"

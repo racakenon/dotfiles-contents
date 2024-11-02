@@ -29,6 +29,7 @@ $env.PATH = (
 	| append ($env.HOME | path join .ghcup bin)
 	| append ($env.HOME | path join .juliaup bin)
 	| append ($env.HOME | path join .local bin)
+	| append ($env.HOME | path join .local zen)
 	| append ($env.HOME | path join .local chez bin)
 	| append ($env.HOME | path join .local chicken bin)
 	| append ($env.HOME | path join .local clojure bin)
