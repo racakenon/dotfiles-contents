@@ -14,44 +14,39 @@ $time\
 $status
 $character
 """
-palette = 'even_light'
+palette = 'ostrea_light'
 
-[palettes.even_light]
-fg0           = "#DDE0CA"
-bg0           = "#2E2B3B"
-bg1           = "#CEC8EC"
-red           = "#8C4C61"
-green         = "#4C6E38"
-yellow        = "#77601B"
-blue          = "#4F5F96"
-magenta       = "#765286"
-syan          = "#116D89"
-
-[palettes.even_dark]
-fg0           = "#2E2B3B"
-bg0           = "#DDE0CA"
-bg1           = "#3A3D1D"
-red           = "#CD869C"
-green         = "#86AB72"
-yellow        = "#B49C5A"
-blue          = "#889BD7"
-magenta       = "#B38DC5"
-syan          = "#5AAAC8"
-
+[palettes.'ostrea_light']
+fg            = '#2E2B3B'
+bg            = '#EEF0DA'
+grey_bg       = '#474936'
+grey_fg       = '#474456'
+red           = '#8C4C61'
+green         = '#4C6E38'
+yellow        = '#77601B'
+blue          = '#4F5F96'
+magenta       = '#765286'
+cyan          = '#116D89'
+light_red     = '#DD96AB'
+light_green   = '#95BB81'
+light_yellow  = '#C4AB69'
+light_blue    = '#97ABE7'
+light_magenta = '#C39CD5'
+light_cyan    = '#6ABAD8'
 
 [python]
 disabled       = false
 symbol         = " "
 version_format = '${raw}'
-style          = 'bold fg:bg0 bg:bg1'
-format         = '[ [$symbol](fg:bg0 bg:bg1)${version} (\($virtualenv\)) ]($style)'
+style          = 'bold fg:bg bg:grey_fg'
+format         = '[ [$symbol](fg:bg bg:grey_fg)${version} (\($virtualenv\)) ]($style)'
 
 [shell]
 disabled       = false
 bash_indicator = "bash"
 zsh_indicator  = "%"
 nu_indicator   = ""
-style          = 'bold fg:fg0 bg:bg0'
+style          = 'bold fg:bg bg:fg'
 format         = '[| $indicator ]($style)'
 
 [fill]
@@ -59,7 +54,7 @@ symbol = ' '
 
 [os]
 disabled = false
-style    = 'bold fg:fg0 bg:bg0'
+style    = 'bold fg:bg bg:fg'
 format   = '[ $symbol ]($style)'
 
 [os.symbols]
@@ -79,19 +74,19 @@ error_symbol   = '[λ](bold red) '
 [time]
 disabled        = false
 format          = '[  $time |]($style)'
-style           = 'bold fg:fg0 bg:bg0'
+style           = 'bold fg:bg bg:fg'
 time_format     = '%R'
 utc_time_offset = 'local'
 
 [cmd_duration]
 min_time          = 0
 show_milliseconds = true
-style             = 'bold fg:bg0 bg:bg1'
+style             = 'bold fg:bg bg:grey_fg'
 format            = '[ $duration |]($style)'
 
 [git_branch]
 symbol            = ' '
-style             = 'bold fg:bg0 bg:bg1'
+style             = 'bold fg:bg bg:grey_fg'
 truncation_length = 22
 truncation_symbol = '…'
 format            = '[| $symbol$branch(:$remote_branch)]($style)'
@@ -101,26 +96,26 @@ commit_hash_length = 7
 tag_symbol         = '󰓹 '
 only_detached      = false
 tag_disabled       = false
-style              = 'bold fg:magenta bg:bg1'
+style              = 'bold fg:light_magenta bg:grey_fg'
 format             = '[ $tag\($hash\)]($style)'
 
 [git_status]
-format      = "[$ahead_behind$all_status ](fg:bg0 bg:bg1)"
-diverged    = "[  $ahead_count $behind_count](fg:magenta bg:bg1)"
-ahead       = "[  $count](fg:blue bg:bg1)"
-behind      = "[  $count](fg:red bg:bg1)"
-conflicted  = "[ 󰵖 $count](fg:red bg:bg1)"
-stashed     = "[ 󰦕 $count](fg:aqua bg:bg1)"
-deleted     = "[  $count](fg:red bg:bg1)"
-renamed     = "[  $count](fg:blue bg:bg1)"
-modified    = "[  $count](fg:aqua bg:bg1)"
-typechanged = "[ 󰴝 $count](fg:blue bg:bg1)"
-staged      = "[ 󰗡 $count](fg:green bg:bg1)"
-untracked   = "[ ◌ $count](fg:blue bg:bg1)"
+format      = "[$ahead_behind$all_status ](fg:bg bg:grey_fg)"
+diverged    = "[  $ahead_count $behind_count](fg:light_magenta bg:grey_fg)"
+ahead       = "[  $count](fg:light_blue bg:grey_fg)"
+behind      = "[  $count](fg:light_red bg:grey_fg)"
+conflicted  = "[ 󰵖 $count](fg:light_red bg:grey_fg)"
+stashed     = "[ 󰦕 $count](fg:light_cyan bg:grey_fg)"
+deleted     = "[  $count](fg:light_red bg:grey_fg)"
+renamed     = "[  $count](fg:light_blue bg:grey_fg)"
+modified    = "[  $count](fg:light_cyan bg:grey_fg)"
+typechanged = "[ 󰴝 $count](fg:light_blue bg:grey_fg)"
+staged      = "[ 󰗡 $count](fg:light_green bg:grey_fg)"
+untracked   = "[ ◌ $count](fg:light_blue bg:grey_fg)"
 
 [status]
 disabled              = false
-style                 = 'bold fg:fg0 bg:bg0'
+style                 = 'bold fg:bg bg:fg'
 symbol                = ' '
 success_symbol        = ' '
 not_executable_symbol = ' '
@@ -133,6 +128,6 @@ format                = '[ $symbol$common_meaning$status$signal_name$signal_numb
 [directory]
 read_only                 = " "
 fish_style_pwd_dir_length = 2
-style                     = 'bold fg:bg0 bg:bg1'
-read_only_style           = 'bold fg:bg0 bg:bg1'
+style                     = 'bold fg:bg bg:grey_fg'
+read_only_style           = 'bold fg:bg bg:grey_fg'
 format                    = '[ $read_only($read_only_style)$path ]($style)'
