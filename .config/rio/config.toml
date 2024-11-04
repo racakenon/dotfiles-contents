@@ -9,7 +9,7 @@ shape = 'block'
 blinking = false
 
 [editor]
-program = "vi"
+program = "vim"
 args = []
 
 use-fork = true
@@ -21,6 +21,8 @@ backend = "Automatic"
 [navigation]
 use-split = true
 clickable = true
+mode = "Bookmark"
+# mode = "BottomTab"
 
 [fonts]
 size = 18
@@ -49,3 +51,6 @@ family="JetBrains Mono"
 style = "Italic"
 weight = 800
 
+[fonts.ui]
+family = "JetBrains Mono"
+weight = 800

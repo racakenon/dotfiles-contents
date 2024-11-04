@@ -1,12 +1,12 @@
 .statusbar {
-  background-color: rgba(40, 40, 40, 0.6);
+  background-color: rgba(46, 43, 59, 0.6);
   border-radius: 30px;
   padding: 5px;
   margin: 0px;
 }
 
 .time {
-  color: rgba(235, 219, 178);
+  color: rgba(221, 224, 202, 1);
   font-size: 15pt;
   font-family: KoPubWorldBatang_Pro;
 }
@@ -17,8 +17,8 @@
 
 .ws-button-active-1 {
   all: unset;
-  color: rgba(184,187,38); 
-  border: 1px solid rgba(184,187,38);
+  color: rgba(134, 171, 114, 1); 
+  border: 1px solid rgba(134, 171, 114, 1);
   border-radius: 50%;
   margin: 0 8 0 8;
   padding: 0 8px 0 8px;
@@ -28,8 +28,8 @@
 
 .ws-button-active-2 {
   all: unset;
-  color: rgb(142, 192, 124);
-  border: 1px solid rgba(142, 192, 124);
+  color: rgba(90, 170, 200, 1);
+  border: 1px solid rgba(90, 170, 200, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -39,8 +39,8 @@
 
 .ws-button-active-3 {
   all: unset;
-  color: rgba(250, 189, 47);
-  border: 1px solid rgba(250, 189, 47);
+  color: rgba(180, 156, 90, 1);
+  border: 1px solid rgba(180, 156, 90, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -50,8 +50,8 @@
 
 .ws-button-active-4 {
   all: unset;
-  color: rgba(7, 118, 120);
-  border: 1px solid rgba(7, 118, 120);
+  color: rgba(136, 155, 215, 1);
+  border: 1px solid ;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -61,7 +61,7 @@
 
 .ws-button-busy-1 {
   all: unset;
-  color: rgba(184, 187, 38);
+  color: rgba(134, 171, 114, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -71,7 +71,7 @@
 
 .ws-button-busy-2 {
   all: unset;
-  color: rgb(142, 192, 124);
+  color: rgba(90, 170, 200, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -81,7 +81,7 @@
 
 .ws-button-busy-3 {
   all: unset;
-  color: rgba(250, 189, 47);
+  color: rgba(180, 156, 90, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -91,7 +91,7 @@
 
 .ws-button-busy-4 {
   all: unset;
-  color: rgba(7, 118, 120);
+  color: rgba(136, 155, 215, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -101,7 +101,7 @@
 
 .ws-button-1 {
   all: unset;
-  color: rgba(235, 219, 178);
+  color: rgba(221, 224, 202, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -111,7 +111,7 @@
 
 .ws-button-2 {
   all: unset;
-  color: rgba(235, 219, 178);
+  color: rgba(221, 224, 202, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -121,7 +121,7 @@
 
 .ws-button-3 {
   all: unset;
-  color: rgba(235, 219, 178);
+  color: rgba(221, 224, 202, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -131,7 +131,7 @@
 
 .ws-button-4 {
   all: unset;
-  color: rgba(235, 219, 178);
+  color: rgba(221, 224, 202, 1);
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -145,18 +145,18 @@
 
 .label{ 
   font-size: 25px;
-  color: rgba(235, 219, 178);
+  color: #CEC8EC;
 }
 
 .metric scale trough highlight {
   all: unset;
-  background-color: #fe8019;
+  background-color: #254A6B;
   border-radius: 10px;
 }
 
 .metric scale trough {
   all: unset;
-  background-color: #fbf1c7;
+  background-color: #CEC8EC; 
   border-radius: 50px;
   min-height: 15px;
   min-width: 100px;
