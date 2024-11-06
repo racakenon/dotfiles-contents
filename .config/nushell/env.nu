@@ -51,7 +51,7 @@ $env.PATH = (
 )
 $env.GOPATH = $env.HOME | path join .local go go
 $env.DOTNET_ROOT = $env.HOME | path join .local share dotnet
-# $env.LS_COLORS = (vivid generate gruvbox-light-soft)
+$env.LS_COLORS = (vivid generate ($env.HOME | path join .config nushell mytilus_light.yml))
 $env.VIRTUAL_ENV_DISABLE_PROMPT = true
 
 mkdir ~/.cache/carapace

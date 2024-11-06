@@ -1,12 +1,12 @@
 .statusbar {
-  background-color: rgba(46, 43, 59, 0.6);
+  background-color: rgba(45.93, 43.72, 57.04, 0.6);
   border-radius: 30px;
   padding: 5px;
   margin: 0px;
 }
 
 .time {
-  color: #EEF0DA;
+  color: #F1F3E1 ;
   font-size: 15pt;
   font-family: KoPubWorldBatang_Pro;
 }
@@ -17,8 +17,8 @@
 
 .ws-button-active-1 {
   all: unset;
-  color: #95BB81;
-  border: 1px solid #95BB81;
+  color: #B5D6A4;
+  border: 1px solid #B5D6A4;
   border-radius: 50%;
   margin: 0 8 0 8;
   padding: 0 8px 0 8px;
@@ -28,8 +28,8 @@
 
 .ws-button-active-2 {
   all: unset;
-  color: #6ABAD8;
-  border: 1px solid #6ABAD8;
+  color: #92DBCC;
+  border: 1px solid #92DBCC;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -39,8 +39,8 @@
 
 .ws-button-active-3 {
   all: unset;
-  color: #C4AB69;
-  border: 1px solid #C4AB69;
+  color: #DDC991;
+  border: 1px solid #DDC991;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -50,8 +50,8 @@
 
 .ws-button-active-4 {
   all: unset;
-  color: #97ABE7;
-  border: 1px solid #97ABE7;
+  color: #B7C8FD;
+  border: 1px solid #B7C8FD;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -61,7 +61,7 @@
 
 .ws-button-busy-1 {
   all: unset;
-  color: #95BB81;
+  color: #B5D6A4;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -71,7 +71,7 @@
 
 .ws-button-busy-2 {
   all: unset;
-  color: #6ABAD8;
+  color: #92DBCC;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -81,7 +81,7 @@
 
 .ws-button-busy-3 {
   all: unset;
-  color: #C4AB69;
+  color: #DDC991;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -91,7 +91,7 @@
 
 .ws-button-busy-4 {
   all: unset;
-  color: #97ABE7;
+  color: #B7C8FD;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -101,7 +101,7 @@
 
 .ws-button-1 {
   all: unset;
-  color: #CDD0BA;
+  color: #F1F3E1;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -111,7 +111,7 @@
 
 .ws-button-2 {
   all: unset;
-  color: #CDD0BA;
+  color: #F1F3E1;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -121,7 +121,7 @@
 
 .ws-button-3 {
   all: unset;
-  color: #CDD0BA;
+  color: #F1F3E1;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -131,7 +131,7 @@
 
 .ws-button-4 {
   all: unset;
-  color: #CDD0BA;
+  color: #F1F3E1;
   border-radius: 50%;
   margin: 0 8px 0 8px;
   padding: 0 8px 0 8px;
@@ -145,18 +145,18 @@
 
 .label{ 
   font-size: 20px;
-  color: #CDCAE0;
+  color: #CAC7D9 ;
 }
 
 .metric scale trough highlight {
   all: unset;
-  background-color: rgba(43, 74, 102, 0.6); 
+  background-color: rgba(202.3, 204.42, 186.86, 0.8); 
   border-radius: 10px;
 }
 
 .metric scale trough {
   all: unset;
-  background-color: rgba(205, 208, 186, 0.6);
+  background-color: rgba(202.48, 199.98, 217.29, 0.8);
   border-radius: 50px;
   min-height: 15px;
   min-width: 100px;

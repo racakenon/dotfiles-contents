@@ -16,7 +16,7 @@ function module.set(config)
 		saturation = 1,
 		brightness = 1,
 	}
-	config.color_scheme = 'ostrea_dark'
+	config.color_scheme = 'mytilus_light'
 end
 
 return module

@@ -1,7 +1,7 @@
 hide-cursor-when-typing = true
 padding-x = 10
 padding-y = [10,10]
-theme = "ostrea_light"
+theme = "mytilus_light"
 confirm-before-quit = false
 
 [cursor]

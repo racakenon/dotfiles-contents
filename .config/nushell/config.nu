@@ -113,7 +113,7 @@ $env.config = {
 
 }
 source keymap.nu
-source ostrea_light.nu
+source mytilus_light.nu
 source ~/.cache/carapace/init.nu
 use '~/.cache/starship/init.nu'
 

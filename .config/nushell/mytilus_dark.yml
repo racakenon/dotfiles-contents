@@ -1,0 +1,157 @@
+colors:
+  fg: 'F1F3E1'
+  red: 'F3B7C8'
+  orange: 'F3BCA4'
+  yellow: 'DCC994'
+  green: 'B6D5A6'
+  mint: '95DACC'
+  cyan: '97D5EE'
+  blue: 'B8C9FA'
+  magenta: 'DCBCEB'
+  white: 'CAC7D9'
+  black: 'CACCBA'
+  bg: '2D2B39'
+  bg_red: '6E3A4B'
+  bg_orange: '6E3E28'
+  bg_yellow: '5D4A12'
+  bg_green: '3A562A'
+  bg_mint: '005A4E'
+  bg_cyan: '09556C'
+  bg_blue: '3C4A76'
+  bg_magenta: '5C3F69'
+  bg_white: '4D4A59'
+  bg_black: '4C4E3F'
+
+core:
+  normal_text:
+    foreground: fg
+    background: bg
+
+  regular_file:
+    foreground: fg
+    background: bg
+
+  reset_to_normal: {}
+
+  directory:
+    foreground: blue
+
+  symlink:
+    background: bg_blue
+    font-style: italic
+
+  multi_hard_link:
+    font-style: bold
+
+  fifo:
+    foreground: magenta 
+
+  socket:
+    foreground: magenta 
+    font-style: bold
+
+  door:
+    background: bg_magenta
+    font-style: bold
+
+  block_device:
+    foreground: yellow
+    font-style: bold
+
+  character_device:
+    background: bg_yellow
+    font-style: italic
+
+  broken_symlink:
+    background: bg_red 
+    font-style: italic
+
+  missing_symlink_target:
+    background: bg_red
+
+  setuid:
+    foreground: fg
+    background: red
+
+  setgid:
+    foreground: bg
+    background: orange
+
+  file_with_capability:
+    foreground: bg
+    background: red
+
+  sticky_other_writable:
+    foreground: fg
+    background: blue
+    font-style: italic
+
+  other_writable:
+    background: bg_green
+    font-style: bold
+
+  sticky:
+    foreground: fg
+    background: blue
+
+  executable_file:
+    background: bg_green
+    font-style: bold
+
+text:
+  special:
+    background: bg_yellow
+    font-style: bold
+
+  todo:
+    background: bg_green
+
+  licenses:
+    foreground: white
+    font-style: italic
+
+  configuration:
+    background: bg_yellow
+
+  other:
+    foreground: fg
+
+markup:
+  foreground: yellow
+
+programming:
+  source:
+    foreground: green
+
+  tooling:
+    background: bg_green
+    font-style: italic
+
+    continuous-integration:
+      background: bg_blue
+
+media:
+  foreground: cyan
+
+  video:
+    background: bg_cyan
+    font-style: bold
+
+office:
+  background: bg_blue
+  font-style: bold
+
+archives:
+  foreground: orange
+
+  images:
+    background: bg_orange
+    font-style: bold
+
+executable:
+  background: bg_green
+  font-style: bold
+
+unimportant:
+  foreground: white
+  font-style: italic
