@@ -23,135 +23,144 @@ colors:
   bg_black: 'CAC7D9'
 
 core:
-  normal_text:
+  normal_text: 
+    foreground: fg
+  regular_file: 
+    foreground: fg
+  reset_to_normal: 
     foreground: fg
     background: bg
-
-  regular_file:
-    foreground: fg
-    background: bg
-
-  reset_to_normal: {}
-
-  directory:
+  directory: 
     foreground: blue
-
-  symlink:
-    background: bg_blue
+    font-style: bold
+  symlink: 
+   foreground: cyan
+   font-style: italic
+  multi_hard_link: 
+    foreground: cyan
+    font-style:
+      - italic
+      - underline
+  fifo: 
+    foreground: bg_yellow
+    background: fg
+    font-style: bold 
+  socket: 
+    foreground: bg_cyan
+    background: fg
+    font-style: bold 
+  door: 
+    foreground: bg_blue
+    background: fg
+    font-style: bold 
+  block_device: 
+    foreground: bg_orange
+    background: fg
+    font-style: bold 
+  character_device: 
+    foreground: bg_orange
+    background: fg
     font-style: italic
-
-  multi_hard_link:
-    font-style: bold
-
-  fifo:
-    foreground: magenta 
-
-  socket:
-    foreground: magenta 
-    font-style: bold
-
-  door:
-    background: bg_magenta
-    font-style: bold
-
-  block_device:
-    foreground: yellow
-    font-style: bold
-
-  character_device:
-    background: bg_yellow
+  broken_symlink: 
+    foreground: red
     font-style: italic
-
-  broken_symlink:
-    background: bg_red 
+  missing_symlink_target: 
+    foreground: red
     font-style: italic
-
-  missing_symlink_target:
-    background: bg_red
-
-  setuid:
-    foreground: fg
-    background: red
-
-  setgid:
-    foreground: bg
-    background: orange
-
-  file_with_capability:
-    foreground: bg
-    background: red
-
-  sticky_other_writable:
-    foreground: fg
-    background: blue
-    font-style: italic
-
-  other_writable:
-    background: bg_green
-    font-style: bold
-
-  sticky:
-    foreground: fg
-    background: blue
-
-  executable_file:
-    background: bg_green
-    font-style: bold
+  setuid: 
+    foreground: bg_mint
+    background: white
+    font-style: underline
+  setgid: 
+    foreground: bg_mint
+    background: white
+    font-style: italic 
+  file_with_capability: 
+    font-style: underline
+  sticky_other_writable: 
+    foreground: bg_magenta
+    background: white
+    font-style: 
+      - bold 
+      - underline
+  other_writable: 
+    foreground: bg_magenta
+    background: white
+    font-style: bold 
+  sticky: 
+    foreground: bg_magenta
+    background: white
+    font-style: underline 
+  executable_file: 
+    foreground: green
 
 text:
   special:
-    background: bg_yellow
-    font-style: bold
-
-  todo:
-    background: bg_green
-
-  licenses:
-    foreground: white
+    foreground: black
     font-style: italic
-
+  todo:
+    foreground: orange
+    font-style: bold
+  licenses:
+    font-style: underline
   configuration:
-    background: bg_yellow
-
+    foreground: mint
   other:
     foreground: fg
 
 markup:
-  foreground: yellow
+    foreground: green
 
 programming:
   source:
-    foreground: green
-
+    foreground: fg
   tooling:
-    background: bg_green
-    font-style: italic
-
+    vcs:
+      foreground: red
+    build:
+      foreground: yellow 
+    packaging:
+      foreground: magenta 
+    editors:
+      foreground: black 
+    documentation:
+      foreground: magenta
+    code-style:
+      foreground: white
     continuous-integration:
-      background: bg_blue
-
+      foreground: cyan 
+ 
+ 
 media:
-  foreground: cyan
-
+  image:
+    foreground: magenta
+  audio:
+    foreground: orange 
   video:
-    background: bg_cyan
-    font-style: bold
+    foreground: blue
+  fonts:
+    foreground: cyan
+  3d: 
+    foreground: mint
 
 office:
-  background: bg_blue
-  font-style: bold
+  document:
+    foreground: fg
+  spreadsheet:
+    foreground: green
+  presentation:
+    foreground: red
+  calendar:
+    foreground: fg
 
 archives:
   foreground: orange
 
-  images:
-    background: bg_orange
-    font-style: bold
-
 executable:
-  background: bg_green
+  foreground: green
   font-style: bold
+  library:
+    foreground: green
 
 unimportant:
   foreground: white
-  font-style: italic
