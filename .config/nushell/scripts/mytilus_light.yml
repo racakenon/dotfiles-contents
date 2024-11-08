@@ -36,15 +36,15 @@ core:
   normal_text: 
     foreground: d1_black
     background: v1_white
-    font-style: normal
+    font-style: regular
   regular_file: 
     foreground: d1_black
     background: v1_white
-    font-style: normal
+    font-style: regular
   reset_to_normal: 
     foreground: d1_black
     background: v1_white
-    font-style: normal
+    font-style: regular
   directory: 
     foreground: d3_blue
     font-style: bold
