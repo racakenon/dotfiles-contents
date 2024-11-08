@@ -17,29 +17,45 @@ $character
 palette = 'mytilus_light'
 
 [palettes.'mytilus_light']
-fg            = '#2D2C37'
-bg            = '#EEF0E1'
-black       = '#55535F'
-white       = '#555649'
-red           = '#784153'
-green         = '#415F30'
-yellow        = '#665217'
-blue          = '#435281'
-magenta       = '#654773'
-cyan          = '#0F5E76'
-bg_red     = '#E9A8BB'
-bg_green   = '#A7C995'
-bg_yellow  = '#D1BC81'
-bg_blue    = '#A9BBF2'
-bg_magenta = '#D1AEE1'
-bg_cyan    = '#83C9E4'
+d0_black   = '#2E2B3B'
+d0_white   = '#2D2F1D'
+d1_black   = '#3A3749'
+d1_white   = '#3A3C2A'
+d2_black   = '#474456'
+d2_white   = '#474936'
+d3_black   = '#555264'
+d3_white   = '#555744'
+d3_red     = '#784153'
+d3_orange  = '#79452D'
+d3_yellow  = '#665217'
+d3_green   = '#415F30'
+d3_mint    = '#056356'
+d3_cyan    = '#0F5E76'
+d3_blue    = '#435281'
+d3_magenta = '#654773'
+v0_black   = '#EEEBFF'
+v0_white   = '#EEF0DA'
+v1_black   = '#DEDAF0'
+v1_white   = '#DDE0CA'
+v2_black   = '#CDCAE0'
+v2_white   = '#CDD0BA'
+v3_black   = '#BDBACF'
+v3_white   = '#BDC0AA'
+v3_red     = '#E9A8BB'
+v3_orange  = '#EAAD93'
+v3_yellow  = '#D1BC81'
+v3_green   = '#A7C995'
+v3_mint    = '#81CFBF'
+v3_cyan    = '#83C9E4'
+v3_blue    = '#A9BBF2'
+v3_magenta = '#D1AEE1'
 
 [python]
 disabled       = false
 symbol         = " "
 version_format = '${raw}'
-style          = 'bold fg:bg bg:black'
-format         = '[ [$symbol](fg:bg bg:black)${version} (\($virtualenv\)) ]($style)'
+style          = 'bold fg:v1_white bg:d2_black'
+format         = '[ [$symbol](fg:v1_white bg:d2_black)${version} (\($virtualenv\)) ]($style)'
 
 [shell]
 disabled       = false
@@ -47,7 +63,7 @@ bash_indicator = "bash"
 zsh_indicator  = "%"
 nu_indicator   = ">"
 fish_indicator = ""
-style          = 'bold fg:bg bg:fg'
+style          = 'bold fg:v1_white bg:d0_black'
 format         = '[| $indicator ]($style)'
 
 [fill]
@@ -55,7 +71,7 @@ symbol = ' '
 
 [os]
 disabled = false
-style    = 'bold fg:bg bg:fg'
+style    = 'bold fg:v1_white bg:d0_black'
 format   = '[ $symbol ]($style)'
 
 [os.symbols]
@@ -69,25 +85,25 @@ Windows  = ""
 
 [character]
 disabled       = false
-success_symbol = '[λ](bold green) '
-error_symbol   = '[λ](bold red) '
+success_symbol = '[λ](bold d3_green) '
+error_symbol   = '[λ](bold d3_red) '
 
 [time]
 disabled        = false
 format          = '[  $time |]($style)'
-style           = 'bold fg:bg bg:fg'
+style           = 'bold fg:v1_white bg:d0_black'
 time_format     = '%R'
 utc_time_offset = 'local'
 
 [cmd_duration]
 min_time          = 0
 show_milliseconds = true
-style             = 'bold fg:bg bg:black'
+style             = 'bold fg:v1_white bg:d2_black'
 format            = '[ $duration |]($style)'
 
 [git_branch]
 symbol            = ' '
-style             = 'bold fg:bg bg:black'
+style             = 'bold fg:v1_white bg:d2_black'
 truncation_length = 22
 truncation_symbol = '…'
 format            = '[| $symbol$branch(:$remote_branch)]($style)'
@@ -97,26 +113,26 @@ commit_hash_length = 7
 tag_symbol         = '󰓹 '
 only_detached      = false
 tag_disabled       = false
-style              = 'bold fg:bg_magenta bg:black'
+style              = 'bold fg:v3_magenta bg:d2_black'
 format             = '[ $tag\($hash\)]($style)'
 
 [git_status]
-format      = "[$ahead_behind$all_status ](fg:bg bg:black)"
-diverged    = "[  $ahead_count $behind_count](fg:bg_magenta bg:black)"
-ahead       = "[  $count](fg:bg_blue bg:black)"
-behind      = "[  $count](fg:bg_red bg:black)"
-conflicted  = "[ 󰵖 $count](fg:bg_red bg:black)"
-stashed     = "[ 󰦕 $count](fg:bg_cyan bg:black)"
-deleted     = "[  $count](fg:bg_red bg:black)"
-renamed     = "[  $count](fg:bg_blue bg:black)"
-modified    = "[  $count](fg:bg_cyan bg:black)"
-typechanged = "[ 󰴝 $count](fg:bg_blue bg:black)"
-staged      = "[ 󰗡 $count](fg:bg_green bg:black)"
-untracked   = "[ ◌ $count](fg:bg_blue bg:black)"
+format      = "[$ahead_behind$all_status ](fg:v3_white bg:d2_black)"
+diverged    = "[  $ahead_count $behind_count](fg:v3_magenta bg:d2_black)"
+ahead       = "[  $count](fg:v3_blue bg:d2_black)"
+behind      = "[  $count](fg:v3_red bg:d2_black)"
+conflicted  = "[ 󰵖 $count](fg:v3_red bg:d2_black)"
+stashed     = "[ 󰦕 $count](fg:v3_cyan bg:d2_black)"
+deleted     = "[  $count](fg:v3_red bg:d2_black)"
+renamed     = "[  $count](fg:v3_blue bg:d2_black)"
+modified    = "[  $count](fg:v3_cyan bg:d2_black)"
+typechanged = "[ 󰴝 $count](fg:v3_blue bg:d2_black)"
+staged      = "[ 󰗡 $count](fg:v3_green bg:d2_black)"
+untracked   = "[ ◌ $count](fg:v3_blue bg:d2_black)"
 
 [status]
 disabled              = false
-style                 = 'bold fg:bg bg:fg'
+style                 = 'bold fg:v1_white bg:d0_black'
 symbol                = ' '
 success_symbol        = ' '
 not_executable_symbol = ' '
@@ -129,6 +145,6 @@ format                = '[ $symbol$common_meaning$status$signal_name$signal_numb
 [directory]
 read_only                 = " "
 fish_style_pwd_dir_length = 2
-style                     = 'bold fg:bg bg:black'
-read_only_style           = 'bold fg:bg bg:black'
+read_only_style           = 'bold fg:v1_white bg:d2_black'
+style                     = 'bold fg:v1_white bg:d2_black'
 format                    = '[ $read_only($read_only_style)$path ]($style)'
