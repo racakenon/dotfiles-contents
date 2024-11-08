@@ -42,6 +42,7 @@ $env.PATH = (
 	| append ($env.HOME | path join .local jdk bin)
 	| append ($env.HOME | path join .local julia bin)
 	| append ($env.HOME | path join .local maven bin)
+	| append ($env.HOME | path join .local lua-language-server bin)
 	| append ($env.HOME | path join .local opam bin)
 	| append ($env.HOME | path join .local python bin)
 	| append ($env.HOME | path join .local racket bin)

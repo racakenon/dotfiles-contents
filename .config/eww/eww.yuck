@@ -18,10 +18,10 @@
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-       :visible {battery == "" ? false : true}
+       ;; :visible {battery == "" ? false : true}
     (metric :label "󰕾"
-               :value volume
-               :onchange "wpctl set-volume @DEFAULT_SINK@ {}%")
+            :value volume
+            :onchange "wpctl set-volume @DEFAULT_SINK@ {}%")
     (metric :label "󱡏"
             :value battery
             :onchange "")))

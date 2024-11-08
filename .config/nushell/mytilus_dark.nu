@@ -1,99 +1,99 @@
 # Retrieve the theme settings
 export def main [] {
     return {
-        binary: '#DCBCEB'
-        block: '#B8C9FA'
-        cell-path: '#CACCBA'
-        closure: '#97D5EE'
-        custom: '#F1F3E1'
-        duration: '#F1F3E1'
-        float: '#F3B7C8'
-        glob: '#F1F3E1'
-        int: '#DCBCEB'
-        list: '#97D5EE'
-        nothing: '#F3B7C8'
-        range: '#F1F3E1'
-        record: '#97D5EE'
-        string: '#F3B7C8'
+        binary: '#D1AEE1'
+        block: '#A9BBF2'
+        cell-path: '#BDBBC9'
+        closure: '#83C9E4'
+        custom: '#EEF0E1'
+        duration: '#EEF0E1'
+        float: '#E9A8BB'
+        glob: '#EEF0E1'
+        int: '#D1AEE1'
+        list: '#83C9E4'
+        nothing: '#E9A8BB'
+        range: '#EEF0E1'
+        record: '#83C9E4'
+        string: '#E9A8BB'
 
-        bool: {|| if $in { '#97D5EE' } else { '#F1F3E1' } }
+        bool: {|| if $in { '#83C9E4' } else { '#EEF0E1' } }
 
         date: {|| (date now) - $in |
             if $in < 1hr {
-                { fg: '#F3B7C8' attr: 'b' }
+                { fg: '#E9A8BB' attr: 'b' }
             } else if $in < 6hr {
-                '#F3B7C8'
+                '#E9A8BB'
             } else if $in < 1day {
-                '#F1F3E1'
+                '#EEF0E1'
             } else if $in < 3day {
-                '#F3B7C8'
+                '#E9A8BB'
             } else if $in < 1wk {
-                { fg: '#F3B7C8' attr: 'b' }
+                { fg: '#E9A8BB' attr: 'b' }
             } else if $in < 6wk {
-                '#97D5EE'
+                '#83C9E4'
             } else if $in < 52wk {
-                '#B8C9FA'
-            } else { '#CACCBA' }
+                '#A9BBF2'
+            } else { '#BDBBC9' }
         }
 
         filesize: {|e|
             if $e == 0b {
-                '#CAC7D9'
+                '#BDBFB0'
             } else if $e < 1mb {
-                '#97D5EE'
-            } else {{ fg: '#B8C9FA' }}
+                '#83C9E4'
+            } else {{ fg: '#A9BBF2' }}
         }
 
-        shape_and: { fg: '#DCBCEB' attr: 'b' }
-        shape_binary: { fg: '#DCBCEB' attr: 'b' }
-        shape_block: { fg: '#B8C9FA' attr: 'b' }
-        shape_bool: '#97D5EE'
-        shape_closure: { fg: '#97D5EE' attr: 'b' }
-        shape_custom: '#F3B7C8'
-        shape_datetime: { fg: '#97D5EE' attr: 'b' }
-        shape_directory: '#97D5EE'
-        shape_external: '#97D5EE'
-        shape_external_resolved: '#97D5EE'
-        shape_externalarg: { fg: '#F3B7C8' attr: 'b' }
-        shape_filepath: '#97D5EE'
-        shape_flag: { fg: '#B8C9FA' attr: 'b' }
-        shape_float: { fg: '#F3B7C8' attr: 'b' }
-        shape_garbage: { fg: '#CACCBA' bg: '#F3B7C8' attr: 'b' }
-        shape_glob_interpolation: { fg: '#97D5EE' attr: 'b' }
-        shape_globpattern: { fg: '#97D5EE' attr: 'b' }
-        shape_int: { fg: '#DCBCEB' attr: 'b' }
-        shape_internalcall: { fg: '#97D5EE' attr: 'b' }
-        shape_keyword: { fg: '#DCBCEB' attr: 'b' }
-        shape_list: { fg: '#97D5EE' attr: 'b' }
-        shape_literal: '#B8C9FA'
-        shape_match_pattern: '#F3B7C8'
+        shape_and: { fg: '#D1AEE1' attr: 'b' }
+        shape_binary: { fg: '#D1AEE1' attr: 'b' }
+        shape_block: { fg: '#A9BBF2' attr: 'b' }
+        shape_bool: '#83C9E4'
+        shape_closure: { fg: '#83C9E4' attr: 'b' }
+        shape_custom: '#E9A8BB'
+        shape_datetime: { fg: '#83C9E4' attr: 'b' }
+        shape_directory: '#83C9E4'
+        shape_external: '#83C9E4'
+        shape_external_resolved: '#83C9E4'
+        shape_externalarg: { fg: '#E9A8BB' attr: 'b' }
+        shape_filepath: '#83C9E4'
+        shape_flag: { fg: '#A9BBF2' attr: 'b' }
+        shape_float: { fg: '#E9A8BB' attr: 'b' }
+        shape_garbage: { fg: '#BDBBC9' bg: '#E9A8BB' attr: 'b' }
+        shape_glob_interpolation: { fg: '#83C9E4' attr: 'b' }
+        shape_globpattern: { fg: '#83C9E4' attr: 'b' }
+        shape_int: { fg: '#D1AEE1' attr: 'b' }
+        shape_internalcall: { fg: '#83C9E4' attr: 'b' }
+        shape_keyword: { fg: '#D1AEE1' attr: 'b' }
+        shape_list: { fg: '#83C9E4' attr: 'b' }
+        shape_literal: '#A9BBF2'
+        shape_match_pattern: '#E9A8BB'
         shape_matching_brackets: { attr: 'u' }
-        shape_nothing: '#F3B7C8'
-        shape_operator: '#F1F3E1'
-        shape_or: { fg: '#DCBCEB' attr: 'b' }
-        shape_pipe: { fg: '#DCBCEB' attr: 'b' }
-        shape_range: { fg: '#F1F3E1' attr: 'b' }
-        shape_raw_string: { fg: '#F1F3E1' attr: 'b' }
-        shape_record: { fg: '#97D5EE' attr: 'b' }
-        shape_redirection: { fg: '#DCBCEB' attr: 'b' }
-        shape_signature: { fg: '#F3B7C8' attr: 'b' }
-        shape_string: '#F3B7C8'
-        shape_string_interpolation: { fg: '#97D5EE' attr: 'b' }
-        shape_table: { fg: '#B8C9FA' attr: 'b' }
-        shape_vardecl: { fg: '#B8C9FA' attr: 'u' }
-        shape_variable: '#DCBCEB'
+        shape_nothing: '#E9A8BB'
+        shape_operator: '#EEF0E1'
+        shape_or: { fg: '#D1AEE1' attr: 'b' }
+        shape_pipe: { fg: '#D1AEE1' attr: 'b' }
+        shape_range: { fg: '#EEF0E1' attr: 'b' }
+        shape_raw_string: { fg: '#EEF0E1' attr: 'b' }
+        shape_record: { fg: '#83C9E4' attr: 'b' }
+        shape_redirection: { fg: '#D1AEE1' attr: 'b' }
+        shape_signature: { fg: '#E9A8BB' attr: 'b' }
+        shape_string: '#E9A8BB'
+        shape_string_interpolation: { fg: '#83C9E4' attr: 'b' }
+        shape_table: { fg: '#A9BBF2' attr: 'b' }
+        shape_vardecl: { fg: '#A9BBF2' attr: 'u' }
+        shape_variable: '#D1AEE1'
 
-        foreground: '#F1F3E1'
-        background: '#2D2B39'
-        cursor: '#CAC7D9'
+        foreground: '#EEF0E1'
+        background: '#2D2C37'
+        cursor: '#BDBFB0'
 
-        empty: '#B8C9FA'
-        header: { fg: '#F3B7C8' attr: 'b' }
+        empty: '#A9BBF2'
+        header: { fg: '#E9A8BB' attr: 'b' }
         hints: '#bdae93'
         leading_trailing_space_bg: { attr: 'n' }
-        row_index: { fg: '#F3B7C8' attr: 'b' }
-        search_result: { fg: '#F3B7C8' bg: '#CACCBA' }
-        separator: '#CACCBA'
+        row_index: { fg: '#E9A8BB' attr: 'b' }
+        search_result: { fg: '#E9A8BB' bg: '#BDBBC9' }
+        separator: '#BDBBC9'
     }
 }
 

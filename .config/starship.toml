@@ -17,22 +17,22 @@ $character
 palette = 'mytilus_light'
 
 [palettes.'mytilus_light']
-fg            = '#2D2B39'
-bg            = '#F1F3E1'
-black       = '#4D4A59'
-white       = '#4C4E3F'
-red           = '#6C3B4B'
-green         = '#3B552C'
-yellow        = '#5C4A17'
-blue          = '#3D4A74'
-magenta       = '#5B4068'
-cyan          = '#12546A'
-bg_red     = '#F5B6C8'
-bg_green   = '#B5D6A4'
-bg_yellow  = '#DDC991'
-bg_blue    = '#B7C8FD'
-bg_magenta = '#DDBCED'
-bg_cyan    = '#93D5F0'
+fg            = '#2D2C37'
+bg            = '#EEF0E1'
+black       = '#55535F'
+white       = '#555649'
+red           = '#784153'
+green         = '#415F30'
+yellow        = '#665217'
+blue          = '#435281'
+magenta       = '#654773'
+cyan          = '#0F5E76'
+bg_red     = '#E9A8BB'
+bg_green   = '#A7C995'
+bg_yellow  = '#D1BC81'
+bg_blue    = '#A9BBF2'
+bg_magenta = '#D1AEE1'
+bg_cyan    = '#83C9E4'
 
 [python]
 disabled       = false
@@ -45,7 +45,8 @@ format         = '[ [$symbol](fg:bg bg:black)${version} (\($virtualenv\)) ]($sty
 disabled       = false
 bash_indicator = "bash"
 zsh_indicator  = "%"
-nu_indicator   = ""
+nu_indicator   = ">"
+fish_indicator = ""
 style          = 'bold fg:bg bg:fg'
 format         = '[| $indicator ]($style)'
 

@@ -1,5 +1,5 @@
-local p = require "gruvbox".palette
 local icon = require("nvim-web-devicons")
+local p = require('mytilus.mytilus')
 
 local function fileformat()
 	local fformat = vim.bo.fileformat
