@@ -1,6 +1,6 @@
 local root_files = {
 	'Project.toml',
-	'.git'
+	'JuliaProject.toml',
 }
 
 local cmd = {
@@ -9,8 +9,10 @@ local cmd = {
 	'--history-file=no',
 	'-e',
 	[[
+    ls_install_path = joinpath( get(DEPOT_PATH, 1, joinpath(homedir(), ".julia")), "environments",)
+    pushfirst!(LOAD_PATH, ls_install_path)
     using LanguageServer
-    depot_path = get(ENV, "JULIA_DEPOT_PATH", "")
+    popfirst!(LOAD_PATH)
     project_path = let
         dirname(something(
             Base.load_path_expand((
@@ -22,7 +24,8 @@ local cmd = {
             Base.load_path_expand("@v#.#"),
         ))
     end
-    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path)
+    @info "Running language server" VERSION pwd() project_path
+    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path )
     server.runlinter = true
     run(server)
   ]],

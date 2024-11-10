@@ -8,9 +8,9 @@ function module.set(config)
 		bottom = 0,
 	}
 	config.audible_bell = 'Disabled'
-	config.enable_tab_bar = false
+	-- config.enable_tab_bar = false
 	config.window_background_opacity = 1.0
-	config.window_decorations = "NONE"
+	-- config.window_decorations = "NONE"
 
 	config.inactive_pane_hsb = {
 		saturation = 1,

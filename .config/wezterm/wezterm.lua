@@ -6,7 +6,7 @@ end
 config = {
 	use_ime = true,
 	xim_im_name = "kime",
-	default_prog = {"nu"}
+	default_prog = {"bash"}
 }
 
 require 'shape'.set(config)

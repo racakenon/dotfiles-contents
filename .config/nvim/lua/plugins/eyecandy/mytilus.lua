@@ -1,8 +1,13 @@
 return {
-	'racagogi/mytilus',
+	'racagogi/even',
 	priority = 1000,
-	config=function ()
-		vim.o.background = 'light'
-		vim.cmd[[colorscheme mytilus-light]]
+	lazy = false,
+	config = function()
+		require("mytilus").setup(
+			{
+				theme = 'dark'
+			}
+		)
+		vim.cmd [[colorscheme mytilus]]
 	end
 }

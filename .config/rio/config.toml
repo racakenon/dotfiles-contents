@@ -21,8 +21,7 @@ backend = "Automatic"
 [navigation]
 use-split = true
 clickable = true
-mode = "Bookmark"
-# mode = "BottomTab"
+mode = "BottomTab"
 
 [fonts]
 size = 18
