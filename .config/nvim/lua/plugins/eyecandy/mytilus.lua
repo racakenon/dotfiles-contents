@@ -5,7 +5,7 @@ return {
 	config = function()
 		require("mytilus").setup(
 			{
-				theme = 'dark'
+				theme = 'light'
 			}
 		)
 		vim.cmd [[colorscheme mytilus]]

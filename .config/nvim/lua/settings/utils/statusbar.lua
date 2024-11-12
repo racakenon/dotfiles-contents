@@ -1,5 +1,6 @@
 local icon = require("nvim-web-devicons")
-local p = require('mytilus.mytilus')
+local p = require('mytilus').gen_palette()
+local mix = require('mytilus').mix_colors
 
 local function fileformat()
 	local fformat = vim.bo.fileformat
@@ -59,20 +60,21 @@ local function diagnostic()
 	local warnings = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.WARN })
 	local hints = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.HINT })
 	local info = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.INFO })
-	vim.api.nvim_set_hl(0, "Error", { fg = p.faded_red, bg = p.light2, bold = true, })
-	vim.api.nvim_set_hl(0, "Warning", { fg = p.faded_yellow, bg = p.light2, bold = true, })
-	vim.api.nvim_set_hl(0, "Info", { fg = p.faded_blue, bg = p.light2, bold = true, })
-	vim.api.nvim_set_hl(0, "Hint", { fg = p.faded_aqua, bg = p.light2, bold = true, })
-	return "%#Error#" .. " " .. errors ..
-		"%#Warning#" .. "  " .. warnings ..
-		"%#Hint#" .. "  " .. hints ..
-		"%#Info#" .. "  " .. info .. "%#StatusLine# "
+
+	vim.api.nvim_set_hl(0, "stError", mix({ p.error, p.cursorline, p.bold }))
+	vim.api.nvim_set_hl(0, "stWarn", mix({ p.warn, p.cursorline, p.bold }))
+	vim.api.nvim_set_hl(0, "stInfo", mix({ p.info, p.cursorline, p.bold }))
+	vim.api.nvim_set_hl(0, "stHint", mix({ p.hint, p.cursorline, p.bold }))
+	return "%#stError#" .. " " .. errors ..
+		"%#stWarn#" .. "  " .. warnings ..
+		"%#stHint#" .. "  " .. hints ..
+		"%#stInfo#" .. "  " .. info .. "%#StatusLine# "
 end
 
 local function lspname()
 	local ftype = vim.bo.filetype
 	local symbol, symbol_color = icon.get_icon_color_by_filetype(ftype, { default = true })
-	vim.api.nvim_set_hl(0, "symbol_color", { fg = symbol_color, bg = p.light2, bold = true, })
+	vim.api.nvim_set_hl(0, "symbol_color", mix({ { fg = symbol_color }, p.cursorline }))
 	local fencoding = vim.bo.fenc == "utf-8" and "" or vim.bo.fenc .. " "
 	return " %#symbol_color#" .. symbol .. "%#StatusLine#" .. " " .. lsp() .. fencoding:upper()
 end
@@ -106,6 +108,7 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter", "LspAttach", "ModeChanged"
 	{
 		pattern = "*",
 		callback = function()
+			vim.api.nvim_set_hl(0, "StatusLine", mix({ p.cursorline, p.bold, p.italic }))
 			vim.api.nvim_set_option_value("statusline", active(), { scope = "local" })
 		end
 	}
