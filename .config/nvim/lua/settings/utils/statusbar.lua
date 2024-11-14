@@ -61,10 +61,10 @@ local function diagnostic()
 	local hints = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.HINT })
 	local info = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.INFO })
 
-	vim.api.nvim_set_hl(0, "stError", mix({ p.error, p.cursorline, p.bold }))
-	vim.api.nvim_set_hl(0, "stWarn", mix({ p.warn, p.cursorline, p.bold }))
-	vim.api.nvim_set_hl(0, "stInfo", mix({ p.info, p.cursorline, p.bold }))
-	vim.api.nvim_set_hl(0, "stHint", mix({ p.hint, p.cursorline, p.bold }))
+	vim.api.nvim_set_hl(0, "stError", mix({ p.di.error, p.ui.bar.active, p.at.bold }))
+	vim.api.nvim_set_hl(0, "stWarn", mix({ p.di.warn, p.ui.bar.active, p.at.bold }))
+	vim.api.nvim_set_hl(0, "stInfo", mix({ p.di.info, p.ui.bar.active, p.at.bold }))
+	vim.api.nvim_set_hl(0, "stHint", mix({ p.di.hint, p.ui.bar.active, p.at.bold }))
 	return "%#stError#" .. " " .. errors ..
 		"%#stWarn#" .. "  " .. warnings ..
 		"%#stHint#" .. "  " .. hints ..
@@ -74,7 +74,7 @@ end
 local function lspname()
 	local ftype = vim.bo.filetype
 	local symbol, symbol_color = icon.get_icon_color_by_filetype(ftype, { default = true })
-	vim.api.nvim_set_hl(0, "symbol_color", mix({ { fg = symbol_color }, p.cursorline }))
+	vim.api.nvim_set_hl(0, "symbol_color", mix({ { fg = symbol_color }, p.ui.bar.active}))
 	local fencoding = vim.bo.fenc == "utf-8" and "" or vim.bo.fenc .. " "
 	return " %#symbol_color#" .. symbol .. "%#StatusLine#" .. " " .. lsp() .. fencoding:upper()
 end
@@ -108,7 +108,6 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter", "LspAttach", "ModeChanged"
 	{
 		pattern = "*",
 		callback = function()
-			vim.api.nvim_set_hl(0, "StatusLine", mix({ p.cursorline, p.bold, p.italic }))
 			vim.api.nvim_set_option_value("statusline", active(), { scope = "local" })
 		end
 	}
