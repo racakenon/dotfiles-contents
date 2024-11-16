@@ -38,7 +38,7 @@ return {
 				}),
 			},
 			mapping = {
-				['<CR>'] = cmp.mapping(function(fallback)
+				['<C-y>'] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						if luasnip.expandable() then
 							luasnip.expand()
@@ -51,7 +51,7 @@ return {
 						fallback()
 					end
 				end),
-				["<Tab>"] = cmp.mapping(function(fallback)
+				["<C-n>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
 					elseif luasnip.locally_jumpable(1) then
@@ -60,7 +60,7 @@ return {
 						fallback()
 					end
 				end, { "i", "s" }),
-				["<S-Tab>"] = cmp.mapping(function(fallback)
+				["<C-p>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
 					elseif luasnip.locally_jumpable(-1) then

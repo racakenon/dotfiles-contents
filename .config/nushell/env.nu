@@ -49,6 +49,11 @@ $env.PATH = (
 	| append ($env.HOME | path join .local ruby bin)
 	| append ($env.HOME | path join .local share coursier bin)
 	| append ($env.HOME | path join .local node lts bin)
+	| append ($env.HOME | path join .local wezterm target release)
+	| append ($env.HOME | path join .local eww target release)
+	| append ($env.HOME | path join .local rio target release)
+	| append ($env.HOME | path join .local swww target release)
+	| append ($env.HOME | path join .local niri target release)
 )
 $env.GOPATH = $env.HOME | path join .local go go
 $env.DOTNET_ROOT = $env.HOME | path join .local share dotnet
