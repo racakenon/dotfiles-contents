@@ -50,14 +50,13 @@ core:
     font-style: bold
   symlink: 
     foreground: d3_cyan
-    font-style: bold
+    font-style: bold 
   multi_hard_link: 
-    foreground: d3_mint
-    font-style: bold
+    foreground: d1_black
+    font-style: bold 
   fifo: 
     foreground: d3_yellow
     background: v1_black
-    font-style: bold
   socket: 
     foreground: d3_magenta 
     font-style: bold
@@ -71,112 +70,75 @@ core:
   character_device: 
     foreground: d3_yellow
     background: v1_black
-    font-style: underline
+    font-style: bold
   broken_symlink: 
     foreground: d3_red
+    background: v3_black
+    font-style: bold
   missing_symlink_target: 
-    foreground: d3_red
-    background: v1_black
+    foreground: d1_black
+    font-style: italic
   setuid: 
     foreground: d1_white
     background: v3_red
-    font-style: bold
   setgid: 
     foreground: d1_black
-    background: v3_green
-    font-style: bold
+    background: v3_yellow
   file_with_capability: 
-    font-style: bold
+    foreground: d1_black
+    font-style: bold 
   sticky_other_writable: 
-    font-style: bold
+    foreground: d1_black
+    background: v3_green 
   other_writable: 
     foreground: d3_blue
     background: v3_green
-    font-style: bold
   sticky: 
     foreground: d1_white
     background: v3_blue
-    font-style: bold
   executable_file: 
     foreground: d3_green
     font-style: bold
 
 text:
-  special:
-    foreground: d0_black
-    font-style: bold
-  todo:
-    foreground: d1_black
-    font-style: bold
-  licenses:
-    foreground: d1_black
-    font-style: underline
-  configuration:
-    foreground: d3_orange
-    font-style: italic
+  foreground: d0_black
+  font-style: 
+    - bold
+    - underline
   other:
-    foreground: d2_black
+    foreground: d1_black
 
 markup:
-  web:
-    foreground: d3_orange
-    font-style: underline
-  other:
-    foreground: d3_yellow
-    font-style: underline
+  foreground: d3_magenta
+  font-style: underline
 
 programming:
   source:
-    foreground: d3_yellow
+    foreground: d1_black
   tooling:
-    vcs:
-      foreground: d3_red
-      font-style: italic
-    build:
-      foreground: d3_magenta
-      font-style: underline
-    packaging:
-      foreground: d3_magenta
-      font-style: bold
-    code-style:
-      foreground: d3_orange
-      font-style: italic
-    editors:
-      foreground: d3_orange
-      font-style: italic
-    documentation:
-      foreground: d3_cyan
-      font-style: italic
-    continuous-integration:
-      foreground: d3_red
-      font-style: italic
+    foreground: d3_red
+    font-style: italic
+    
 
 media:
+  foreground: d3_mint 
   image:
     foreground: d3_magenta
   audio:
     foreground: d3_yellow
   video:
     foreground: d3_orange
-  fonts:
-    foreground: d3_blue
-  3d: 
-    foreground: d3_red
 
 office:
-  document:
-    foreground: d3_cyan
-  spreadsheet:
-    foreground: d3_green
-  presentation:
-    foreground: d3_red
-  calendar:
-    foreground: d3_mint
+  foreground: d3_cyan
+
 archives:
   foreground: d3_red
-  font-style: underline
+  font-style: bold 
+
 executable:
   foreground: d3_green
+  font-style: bold 
 
 unimportant:
   foreground: d3_white
