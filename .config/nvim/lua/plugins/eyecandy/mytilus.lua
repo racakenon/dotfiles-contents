@@ -11,6 +11,6 @@ return {
 				}
 			}
 		)
-		vim.cmd [[colorscheme mytilus-dark]]
+		vim.cmd [[colorscheme mytilus-light]]
 	end
 }
