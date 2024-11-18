@@ -6,9 +6,13 @@ return {
 		require("mytilus").setup(
 			{
 				theme    = 'light',
-				options  = {},
-				overides = {
-				}
+				options  = {
+					bold = {
+						["sy.keyword"] = true,
+						["sy.type"] = true,
+					}
+				},
+				overides = { }
 			}
 		)
 		vim.cmd [[colorscheme mytilus-light]]

@@ -1,8 +1,5 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	dependencies = {
-		"nushell/tree-sitter-nu"
-	},
 	config = function()
 		require 'nvim-treesitter.configs'.setup {
 			ensure_installed = "all",
