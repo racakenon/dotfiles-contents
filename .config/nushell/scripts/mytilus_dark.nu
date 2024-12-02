@@ -1,99 +1,99 @@
 # Retrieve the theme settings
 export def main [] {
     return {
-        binary: '#D1AFE2'
-        block: '#82CFC0'
-        cell-path: '#BEC0AA'
-        closure: '#A9BCF2'
-        custom: '#D1AFE2'
-        duration: '#82CFC0'
-        float: '#D2BC82'
-        glob: '#82CFC0'
-        int: '#D2BC82'
-        list: '#84C9E5'
-        nothing: '#EAA9BB'
-        range: '#82CFC0'
-        record: '#84C9E5'
-        string: '#A8CA96'
+        binary: '#CFB2D4'
+        block: '#8BCEB6'
+        cell-path: '#BEBCC6'
+        closure: '#ACBEE3'
+        custom: '#CFB2D4'
+        duration: '#8BCEB6'
+        float: '#CFBD7E'
+        glob: '#8BCEB6'
+        int: '#CFBD7E'
+        list: '#8CC9D7'
+        nothing: '#E5ADB2'
+        range: '#8BCEB6'
+        record: '#8CC9D7'
+        string: '#ABC990'
 
-        bool: {|| if $in { '#82CFC0' } else { "#EAA9BB" } }
+        bool: {|| if $in { '#8BCEB6' } else { "#E5ADB2" } }
 
         date: {|| (date now) - $in |
             if $in < 1hr {
-                '#EAA9BB'
+                '#E5ADB2'
             } else if $in < 6hr {
-                '#EAAE93'
+                '#E5B18E'
             } else if $in < 1day {
-                '#D2BC82'
+                '#CFBD7E'
             } else if $in < 3day {
-                '#A8CA96'
+                '#ABC990'
             } else if $in < 1wk {
                 '$(d3_int)' 
             } else if $in < 6wk {
-                '#84C9E5'
+                '#8CC9D7'
             } else if $in < 52wk {
-                '#A9BCF2'
-            } else { '#D1AFE2'}
+                '#ACBEE3'
+            } else { '#CFB2D4'}
         }
 
         filesize: {|e|
             if $e == 0b {
-                '#BEBBD0'
+                '#BEBFB4'
             } else if $e < 1mb {
-                '#82CFC0'
-            } else {{ fg: '#EEF1DA' attr: 'b' }}
+                '#8BCEB6'
+            } else {{ fg: '#DFDCE7' attr: 'b' }}
         }
 
-        shape_and: { fg: '#82CFC0' attr: 'b' }
-        shape_binary: { fg: '#D1AFE2' attr: 'b' }
-        shape_block: { fg: '#82CFC0' attr: 'b' }
-        shape_bool: '#D2BC82'
-        shape_closure: { fg: '#A9BCF2' attr: 'b' }
-        shape_custom: '#D1AFE2'
-        shape_datetime: { fg: '#D2BC82' attr: 'b' }
-        shape_directory: '#A9BCF2'
-        shape_external: '#A8CA96'
-        shape_external_resolved: '#A8CA96'
-        shape_externalarg: { fg: '#D2BC82' attr: 'b' }
-        shape_filepath: '#A9BCF2'
-        shape_flag: { fg: '#EAA9BB' attr: 'b' }
-        shape_float: { fg: '#D2BC82' attr: 'b' }
-        shape_garbage: { fg: '#DEDBF1' bg: '#794153' attr: 'b' }
-        shape_glob_interpolation: { fg: '#82CFC0' attr: 'b' }
-        shape_globpattern: { fg: '#82CFC0' attr: 'b' }
-        shape_int: { fg: '#D2BC82' attr: 'b' }
-        shape_internalcall: { fg: '#82CFC0' attr: 'b' }
-        shape_keyword: { fg: '#EAA9BB' attr: 'b' }
-        shape_list: { fg: '#84C9E5' attr: 'b' }
-        shape_literal: '#D2BC82'
+        shape_and: { fg: '#8BCEB6' attr: 'b' }
+        shape_binary: { fg: '#CFB2D4' attr: 'b' }
+        shape_block: { fg: '#8BCEB6' attr: 'b' }
+        shape_bool: '#CFBD7E'
+        shape_closure: { fg: '#ACBEE3' attr: 'b' }
+        shape_custom: '#CFB2D4'
+        shape_datetime: { fg: '#CFBD7E' attr: 'b' }
+        shape_directory: '#ACBEE3'
+        shape_external: '#ABC990'
+        shape_external_resolved: '#ABC990'
+        shape_externalarg: { fg: '#CFBD7E' attr: 'b' }
+        shape_filepath: '#ACBEE3'
+        shape_flag: { fg: '#E5ADB2' attr: 'b' }
+        shape_float: { fg: '#CFBD7E' attr: 'b' }
+        shape_garbage: { fg: '#D4D5CA' bg: '$(v3_red)' attr: 'b' }
+        shape_glob_interpolation: { fg: '#8BCEB6' attr: 'b' }
+        shape_globpattern: { fg: '#8BCEB6' attr: 'b' }
+        shape_int: { fg: '#CFBD7E' attr: 'b' }
+        shape_internalcall: { fg: '#8BCEB6' attr: 'b' }
+        shape_keyword: { fg: '#E5ADB2' attr: 'b' }
+        shape_list: { fg: '#8CC9D7' attr: 'b' }
+        shape_literal: '#CFBD7E'
         shape_match_pattern: '$(d3_orage)'
         shape_matching_brackets: { attr: 'u' }
-        shape_nothing: '#EAA9BB'
-        shape_operator: '#A9BCF2'
-        shape_or: { fg: '#82CFC0' attr: 'b' }
-        shape_pipe: { fg: '#A9BCF2' attr: 'b' }
-        shape_range: { fg: '#82CFC0' attr: 'b' }
-        shape_raw_string: { fg: '#DEE0CA' attr: 'b' }
-        shape_record: { fg: '#84C9E5' attr: 'b' }
-        shape_redirection: { fg: '#84C9E5' attr: 'b' }
-        shape_signature: { fg: '#EAAE93' attr: 'b' }
-        shape_string: '#A8CA96'
-        shape_string_interpolation: { fg: '#82CFC0' attr: 'b' }
-        shape_table: { fg: '#84C9E5' attr: 'b' }
-        shape_vardecl: { fg: '#A9BCF2' attr: 'u' }
-        shape_variable: '#EAAE93'
+        shape_nothing: '#E5ADB2'
+        shape_operator: '#ACBEE3'
+        shape_or: { fg: '#8BCEB6' attr: 'b' }
+        shape_pipe: { fg: '#ACBEE3' attr: 'b' }
+        shape_range: { fg: '#8BCEB6' attr: 'b' }
+        shape_raw_string: { fg: '#D5D2DD' attr: 'b' }
+        shape_record: { fg: '#8CC9D7' attr: 'b' }
+        shape_redirection: { fg: '#8CC9D7' attr: 'b' }
+        shape_signature: { fg: '#E5B18E' attr: 'b' }
+        shape_string: '#ABC990'
+        shape_string_interpolation: { fg: '#8BCEB6' attr: 'b' }
+        shape_table: { fg: '#8CC9D7' attr: 'b' }
+        shape_vardecl: { fg: '#ACBEE3' attr: 'u' }
+        shape_variable: '#E5B18E'
 
-        foreground: '#DEE0CA'
-        background: '#3B3849'
-        cursor: '#BEC0AA'
+        foreground: '#D5D2DD'
+        background: '#2E2F26'
+        cursor: '#BEBCC6'
 
-        empty: '#A9BCF2'
-        header: { fg: '#A8CA96' attr: 'b' }
-        hints: '#BEC0AA'
+        empty: '#ACBEE3'
+        header: { fg: '#ABC990' attr: 'b' }
+        hints: '#BEBCC6'
         leading_trailing_space_bg: { attr: 'n' }
-        row_index: { fg: '#CED0BA' attr: 'b' }
-        search_result: { fg: '#EAAE93' bg: '#555744' }
-        separator: '#EFEBFF'
+        row_index: { fg: '#C8C5D0' attr: 'b' }
+        search_result: { fg: '#E5B18E' bg: '#43414A' }
+        separator: '#DEDFD4'
     }
 }
 

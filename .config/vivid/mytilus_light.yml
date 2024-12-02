@@ -1,36 +1,36 @@
 colors:
-  d0_black:      '2E2B3C'
-  d0_white:      '2E2F1E'
-  d1_black:      '3B3849'
-  d1_white:      '3B3C2A'
-  d2_black:      '484557'
-  d2_white:      '484A37'
-  d3_black:      '555265'
-  d3_white:      '555744'
-  d3_red:        '794153'
-  d3_orange:     '7A462E'
-  d3_yellow:     '675317'
-  d3_chartreuse: '415F30'
-  d3_green:      '066357'
-  d3_cyan:       '105E77'
-  d3_blue:       '445282'
-  d3_purple:     '664774'
-  v0_black:      'EFEBFF'
-  v0_white:      'EEF1DA'
-  v1_black:      'DEDBF1'
-  v1_white:      'DEE0CA'
-  v2_black:      'CECBE0'
-  v2_white:      'CED0BA'
-  v3_black:      'BEBBD0'
-  v3_white:      'BEC0AA'
-  v3_red:        'EAA9BB'
-  v3_orange:     'EAAE93'
-  v3_yellow:     'D2BC82'
-  v3_chartreuse: 'A8CA96'
-  v3_green:      '82CFC0'
-  v3_cyan:       '84C9E5'
-  v3_blue:       'A9BCF2'
-  v3_purple:     'D1AFE2'
+  d0_black:      '36343C'
+  d0_white:      '35362E'
+  d1_black:      '3E3C44'
+  d1_white:      '3D3E35'
+  d2_black:      '46434C'
+  d2_white:      '45463D'
+  d3_black:      '4E4B54'
+  d3_white:      '4D4E45'
+  d3_red:        '6C3D43'
+  d3_orange:     '6D4120'
+  d3_yellow:     '5C4C04'
+  d3_chartreuse: '3C5622'
+  d3_green:      '115A46'
+  d3_cyan:       '145662'
+  d3_blue:       '3D4D6C'
+  d3_purple:     '5B4360'
+  v0_black:      'F3F0FB'
+  v0_white:      'F2F3E8'
+  v1_black:      'E5E3EE'
+  v1_white:      'E4E6DB'
+  v2_black:      'D8D6E0'
+  v2_white:      'D7D9CE'
+  v3_black:      'CBC9D3'
+  v3_white:      'CACCC1'
+  v2_red:        'F8CBCC'
+  v2_orange:     'F8CEB0'
+  v2_yellow:     'E6D8A4'
+  v2_chartreuse: 'C8E1B2'
+  v2_green:      'B1E5CF'
+  v2_cyan:       'B1E1EA'
+  v2_blue:       'C9D8F4'
+  v2_purple:     'E5CFE8'
 
 core:
   normal_text: 
@@ -80,22 +80,22 @@ core:
     font-style: italic
   setuid: 
     foreground: d1_white
-    background: v3_red
+    background: v2_red
   setgid: 
     foreground: d1_black
-    background: v3_yellow
+    background: v2_yellow
   file_with_capability: 
     foreground: d1_black
     font-style: bold 
   sticky_other_writable: 
     foreground: d1_black
-    background: v3_chartreuse 
+    background: v2_chartreuse 
   other_writable: 
     foreground: d3_blue
-    background: v3_chartreuse
+    background: v2_chartreuse
   sticky: 
     foreground: d1_white
-    background: v3_blue
+    background: v2_blue
   executable_file: 
     foreground: d3_chartreuse
     font-style: bold

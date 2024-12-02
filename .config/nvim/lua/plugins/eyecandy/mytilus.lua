@@ -5,16 +5,16 @@ return {
 	config = function()
 		require("mytilus").setup(
 			{
-				theme    = 'light',
+				theme    = 'dark',
 				options  = {
 					bold = {
 						["sy.keyword"] = true,
 						["sy.type"] = true,
 					}
 				},
-				overides = { }
+				overides = {}
 			}
 		)
-		vim.cmd [[colorscheme mytilus-light]]
+		vim.cmd [[colorscheme mytilus]]
 	end
 }
