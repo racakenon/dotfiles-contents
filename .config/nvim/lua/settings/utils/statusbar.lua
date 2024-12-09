@@ -1,6 +1,5 @@
 local icon = require("nvim-web-devicons")
-local p = require('mytilus').gen_palette()
-local mix = require('mytilus').mix_colors
+local c = require('mytilus').get_colors()
 
 local function fileformat()
 	local fformat = vim.bo.fileformat
@@ -61,10 +60,10 @@ local function diagnostic()
 	local hints = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.HINT })
 	local info = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.INFO })
 
-	vim.api.nvim_set_hl(0, "stError", mix({ p.di.error, p.ui.bar.active, p.at.bold }))
-	vim.api.nvim_set_hl(0, "stWarn", mix({ p.di.warn, p.ui.bar.active, p.at.bold }))
-	vim.api.nvim_set_hl(0, "stInfo", mix({ p.di.info, p.ui.bar.active, p.at.bold }))
-	vim.api.nvim_set_hl(0, "stHint", mix({ p.di.hint, p.ui.bar.active, p.at.bold }))
+	vim.api.nvim_set_hl(0, "stError", { fg = c.d3_red, bg = c.v3_black, bold = true })
+	vim.api.nvim_set_hl(0, "stWarn", { fg = c.d3_yellow, bg = c.v3_black, bold = true })
+	vim.api.nvim_set_hl(0, "stInfo", { fg = c.d3_blue, bg = c.v3_black, bold = true })
+	vim.api.nvim_set_hl(0, "stHint", { fg = c.d3_purple, bg = c.v3_black, bold = true })
 	return "%#stError#" .. " " .. errors ..
 		"%#stWarn#" .. "  " .. warnings ..
 		"%#stHint#" .. "  " .. hints ..
@@ -74,7 +73,7 @@ end
 local function lspname()
 	local ftype = vim.bo.filetype
 	local symbol, symbol_color = icon.get_icon_color_by_filetype(ftype, { default = true })
-	vim.api.nvim_set_hl(0, "symbol_color", mix({ { fg = symbol_color }, p.ui.bar.active}))
+	vim.api.nvim_set_hl(0, "symbol_color", { fg = symbol_color, bg = c.v3_black })
 	local fencoding = vim.bo.fenc == "utf-8" and "" or vim.bo.fenc .. " "
 	return " %#symbol_color#" .. symbol .. "%#StatusLine#" .. " " .. lsp() .. fencoding:upper()
 end

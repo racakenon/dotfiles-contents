@@ -26,7 +26,6 @@ mode = "BottomTab"
 [fonts]
 size = 18
 features = []
-family="JetBrains Mono"
 extras = [{ family = "KoPubWorldDotum_Pro" }, {family= "Noto Color Emoji"}]
 
 [fonts.emoji]
@@ -39,7 +38,7 @@ style = "Normal"
 [fonts.bold]
 family="JetBrains Mono"
 style = "Normal"
-weight = 800
+weight = 600
 
 [fonts.italic]
 family="JetBrains Mono"
@@ -48,8 +47,8 @@ style = "Italic"
 [fonts.bold-italic]
 family="JetBrains Mono"
 style = "Italic"
-weight = 800
+weight = 600
 
 [fonts.ui]
 family = "JetBrains Mono"
-weight = 800
+weight = 600
