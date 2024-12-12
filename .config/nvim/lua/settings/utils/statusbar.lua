@@ -1,5 +1,4 @@
 local icon = require("nvim-web-devicons")
-local c = require('mytilus').get_colors()
 
 local function fileformat()
 	local fformat = vim.bo.fileformat
@@ -58,22 +57,28 @@ local function diagnostic()
 	local errors = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.ERROR })
 	local warnings = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.WARN })
 	local hints = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.HINT })
-	local info = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.INFO })
+	local infos = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.INFO })
+	local hl = vim.api.nvim_get_hl(0, { name = "StatusLine" })
+	local error = vim.api.nvim_get_hl(0, { name = "DiagnosticError" })
+	local warn = vim.api.nvim_get_hl(0, { name = "DiagnosticWarn" })
+	local help = vim.api.nvim_get_hl(0, { name = "DiagnosticHelp" })
+	local info = vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" })
 
-	vim.api.nvim_set_hl(0, "stError", { fg = c.d3_red, bg = c.v3_black, bold = true })
-	vim.api.nvim_set_hl(0, "stWarn", { fg = c.d3_yellow, bg = c.v3_black, bold = true })
-	vim.api.nvim_set_hl(0, "stInfo", { fg = c.d3_blue, bg = c.v3_black, bold = true })
-	vim.api.nvim_set_hl(0, "stHint", { fg = c.d3_purple, bg = c.v3_black, bold = true })
+	vim.api.nvim_set_hl(0, "stError", { fg = error.fg, bg = hl.bg, bold = true })
+	vim.api.nvim_set_hl(0, "stWarn", { fg = warn.fg, bg = hl.bg, bold = true })
+	vim.api.nvim_set_hl(0, "stInfo", { fg = help.fg, bg = hl.bg, bold = true })
+	vim.api.nvim_set_hl(0, "stHint", { fg = info.fg, bg = hl.bg, bold = true })
 	return "%#stError#" .. " " .. errors ..
 		"%#stWarn#" .. "  " .. warnings ..
 		"%#stHint#" .. "  " .. hints ..
-		"%#stInfo#" .. "  " .. info .. "%#StatusLine# "
+		"%#stInfo#" .. "  " .. infos .. "%#StatusLine# "
 end
 
 local function lspname()
 	local ftype = vim.bo.filetype
 	local symbol, symbol_color = icon.get_icon_color_by_filetype(ftype, { default = true })
-	vim.api.nvim_set_hl(0, "symbol_color", { fg = symbol_color, bg = c.v3_black })
+	local hl = vim.api.nvim_get_hl(0, { name = "StatusLine" })
+	vim.api.nvim_set_hl(0, "symbol_color", { fg = symbol_color, bg = hl.bg })
 	local fencoding = vim.bo.fenc == "utf-8" and "" or vim.bo.fenc .. " "
 	return " %#symbol_color#" .. symbol .. "%#StatusLine#" .. " " .. lsp() .. fencoding:upper()
 end
@@ -107,6 +112,7 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter", "LspAttach", "ModeChanged"
 	{
 		pattern = "*",
 		callback = function()
+			vim.print("statsus")
 			vim.api.nvim_set_option_value("statusline", active(), { scope = "local" })
 		end
 	}
@@ -116,6 +122,7 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" },
 	{
 		pattern = "*",
 		callback = function()
+			vim.print("statsus")
 			vim.api.nvim_set_option_value("statusline", inactive(), { scope = "local" })
 		end
 	}
