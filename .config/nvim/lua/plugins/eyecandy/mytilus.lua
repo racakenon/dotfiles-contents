@@ -5,12 +5,9 @@ return {
 	config = function()
 		require("mytilus").setup(
 			{
-				theme    = 'dark',
+				theme    = 'light',
 				options  = {
-					bold = {
-						["sy.keyword"] = true,
-						["sy.type"] = true,
-					}
+					
 				},
 				overides = {}
 			}

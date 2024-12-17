@@ -112,7 +112,6 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter", "LspAttach", "ModeChanged"
 	{
 		pattern = "*",
 		callback = function()
-			vim.print("statsus")
 			vim.api.nvim_set_option_value("statusline", active(), { scope = "local" })
 		end
 	}
@@ -122,7 +121,6 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" },
 	{
 		pattern = "*",
 		callback = function()
-			vim.print("statsus")
 			vim.api.nvim_set_option_value("statusline", inactive(), { scope = "local" })
 		end
 	}
