@@ -9,12 +9,6 @@ layout {
     }
 	default-column-width { proportion 0.5; }
 }
-window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-     default-column-width {}
-	
-}
-prefer-no-csd
 
 window-rule {
     geometry-corner-radius 10
@@ -42,12 +36,11 @@ animations {
 }
 
 binds {
-    Mod+Shift+W  { spawn "rio"; }
+    Mod+Shift+W  { spawn "wezterm"; }
     Mod+Shift+M  { spawn "~/.config/niri/waydroid"; }
     Mod+Shift+R  { spawn "~/.config/niri/record";}
     Mod+Shift+S  { spawn "pkill" "wl-screenrec"; }
-    // Mod+Shift+V { spawn "vivaldi" "--gtk-version=4" "--ozone-platform=wayland"; }
-    Mod+Shift+V { spawn "zen"; }
+    Mod+Shift+V { spawn "vivaldi"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     Mod+Shift+Q { quit skip-confirmation=true; }
