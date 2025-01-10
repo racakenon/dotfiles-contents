@@ -34,3 +34,7 @@ if status is-interactive
 	set -x GOPATH $HOME/.local/go/go
 	set -x DOTNET_ROOT $HOME/.local/share/dotnet
 end
+
+if status is-login 
+dbus-run-session niri -- --session&
+end
