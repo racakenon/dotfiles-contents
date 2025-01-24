@@ -13,7 +13,7 @@ vim.opt.laststatus = 3
 -- 8
 -- 9
 vim.opt.mouse = ""
-vim.opt.conceallevel=1
+vim.opt.conceallevel=0
 -- 10
 -- 11
 vim.opt.clipboard = "unnamedplus"

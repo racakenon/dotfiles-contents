@@ -33,8 +33,9 @@ if status is-interactive
 	fish_add_path $HOME/.local/niri/target/release
 	set -x GOPATH $HOME/.local/go/go
 	set -x DOTNET_ROOT $HOME/.local/share/dotnet
+	set -x MANPAGER "nvim +Man!"
 end
 
 if status is-login 
-dbus-run-session niri -- --session&
+	dbus-run-session niri -- --session&
 end

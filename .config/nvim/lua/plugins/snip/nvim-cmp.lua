@@ -2,6 +2,7 @@ return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
 		"saadparwaiz1/cmp_luasnip",
+		"doxnit/cmp-luasnip-choice",
 		"hrsh7th/cmp-nvim-lsp",
 		"onsails/lspkind.nvim",
 		"hrsh7th/cmp-buffer",
@@ -78,7 +79,7 @@ return {
 				{ name = 'luasnip_choice' },
 				{ name = 'buffer' },
 				{ name = 'path' },
-				{ name = 'latex_symbols' }
+				{ name = 'latex_symbols' },
 			}
 		}
 	end
