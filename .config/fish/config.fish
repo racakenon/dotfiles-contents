@@ -2,6 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 	starship init fish | source
 	set -U LS_COLORS $(vivid generate $HOME/.config/vivid/mytilus_light.yml)
+	set -U fish_greeting
 	fish_add_path $HOME/.cargo/bin/
 	fish_add_path $HOME/.ghcup/bin/
 	fish_add_path $HOME/.cabal/bin/
