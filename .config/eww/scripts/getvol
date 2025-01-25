@@ -1,2 +1,0 @@
-#!/bin/sh
-wpctl get-volume @DEFAULT_SINK@ | awk '{ print $2*100}'

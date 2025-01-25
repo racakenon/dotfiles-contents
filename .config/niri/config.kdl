@@ -1,6 +1,7 @@
 layout {
     gaps 10
     center-focused-column "never"
+	always-center-single-column
     focus-ring {
         off
     }
@@ -8,26 +9,44 @@ layout {
         off
     }
 	default-column-width { proportion 0.5; }
+	insert-hint {
+		off
+	}
 }
 
 window-rule {
     geometry-corner-radius 10
 	clip-to-geometry true
 }
-workspace "春"
-workspace "夏"
-workspace "秋"
-workspace "冬"
+
+output "DP-2" {
+	scale 1.5
+	position x=0 y=0
+}
+
+output "DP-3" {
+	scale 1.5
+	position x=2560 y=0
+}
+
+
+workspace "left" {
+	open-on-output "DP-2"
+}
+
+workspace "right" {
+	open-on-output "DP-3"
+}
 
 hotkey-overlay {
     skip-at-startup
 }
 
 spawn-at-startup "kime"
-spawn-at-startup  "swww-daemon"
-spawn-at-startup  "eww" "daemon"
-spawn-at-startup  "eww" "open" "statusbar"
 spawn-at-startup  "waydroid" "session" "start"
+spawn-at-startup  "swww-daemon"
+spawn-at-startup  "~/.config/niri/wallpaper"
+
 
 screenshot-path "~/%Y-%m-%d %H-%M-%S.png"
 
@@ -51,14 +70,10 @@ binds {
     Mod+Shift+Right { move-column-right; }
 	Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
-	Mod+1 { focus-workspace "春"; }
-    Mod+2 { focus-workspace "夏"; }
-    Mod+3 { focus-workspace "秋"; }
-    Mod+4 { focus-workspace "冬"; }
-    Mod+Shift+1 { move-column-to-workspace "春"; }
-    Mod+Shift+2 { move-column-to-workspace "夏"; }
-    Mod+Shift+3 { move-column-to-workspace "秋"; }
-    Mod+Shift+4 { move-column-to-workspace "冬"; }
+	Mod+1 { focus-workspace "left"; }
+    Mod+0 { focus-workspace "right"; }
+    Mod+Shift+1 { move-column-to-workspace "left"; }
+    Mod+Shift+2 { move-column-to-workspace "right"; }
 	Mod+F { maximize-column; }
 	Print { screenshot; }
     Alt+Print { screenshot-window; }

@@ -25,7 +25,7 @@ if status is-interactive
 	fish_add_path $HOME/.local/ruby/bin/
 	fish_add_path $HOME/.local/racket/bin/
 	fish_add_path $HOME/.local/share/coursier/bin/
-	fish_add_path $HOME/.local/node/lts/bin/
+	fish_add_path $HOME/.local/node/bin/
 	fish_add_path $HOME/.local/wezterm/target/release
 	fish_add_path $HOME/.local/eww/target/release
 	fish_add_path $HOME/.local/rio/target/release
