@@ -35,6 +35,8 @@ if status is-interactive
 	set -x GOPATH $HOME/.local/go/go
 	set -x DOTNET_ROOT $HOME/.local/share/dotnet
 	set -x MANPAGER "nvim +Man!"
+	set -x EDITOR "nvim"
+	set -x PAGER "nvim -R -c 'nnoremap q :lclose<CR>:q<CR>'"
 end
 
 if status is-login 
