@@ -1,15 +1,28 @@
 local module = {}
 local wezterm = require 'wezterm'
+local ko_normal = 'Gothic A1'
+local en_normal = 'Monaspace Neon'
+local ko_special = 'Gowun Batang'
+local en_special = 'Monaspace Xenon'
+local features = { 'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss09', 'liga', }
 function module.set(config)
 	config.font_size       = 14
 	config.unicode_version = 14
 	config.font            = wezterm.font_with_fallback {
 		{
-			family = 'JetBrains Mono',
+			family = en_normal,
 			weight = 'Regular',
-			style = "Normal"
+			style = "Normal",
+			harfbuzz_features = features,
 		},
-		"KoPubWorld돋움체_Pro Medium",
+		{
+			family = ko_normal,
+			weight = 'Regular',
+			style = "Normal",
+		},
+		"Symbols Nerd Font Mono",
+		"Noto Sans Symbols",
+		"Noto Sans Symbols 2 Regular",
 		"Noto Color Emoji"
 	}
 	config.font_rules      = {
@@ -18,12 +31,17 @@ function module.set(config)
 			italic = true,
 			font = wezterm.font_with_fallback {
 				{
-					family = 'JetBrains Mono',
+					family = en_special,
 					weight = 'Bold',
-					style = "Italic"
+					style = "Normal",
+					harfbuzz_features = features,
 				},
-				"KoPubWorld바탕체_Pro Bold",
-				"Noto Color Emoji"
+				{
+					family = ko_special,
+					weight = 'Bold',
+					style = "Normal",
+				},
+
 			},
 		},
 		{
@@ -31,24 +49,34 @@ function module.set(config)
 			italic = false,
 			font = wezterm.font_with_fallback {
 				{
-					family = 'JetBrains Mono',
+					family = en_normal,
 					weight = 'Bold',
-					style = "Normal"
+					style = "Normal",
+					harfbuzz_features = features,
 				},
-				"KoPubWorld돋움체_Pro Bold",
-				"Noto Color Emoji"
+				{
+					family = ko_normal,
+					weight = 'Bold',
+					style = "Normal",
+				},
+
 			}
 		},
 		{
 			italic = true,
 			font = wezterm.font_with_fallback {
 				{
-					family = 'JetBrains Mono',
+					family = en_special,
 					weight = 'Regular',
-					style = "Italic"
+					style = "Normal",
+					harfbuzz_features = features,
 				},
-				"KoPubWorld바탕체_Pro Medium",
-				"Noto Color Emoji"
+				{
+					family = ko_special,
+					weight = 'Regular',
+					style = "Normal",
+				},
+
 			}
 		}
 	}
