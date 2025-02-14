@@ -13,5 +13,5 @@ if status is-interactive
 end
 
 if status is-login 
-	dbus-run-session niri -- --session&
+	niri --session
 end
