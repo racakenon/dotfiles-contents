@@ -3,11 +3,18 @@ return {
 	priority = 1000,
 	lazy = false,
 	config = function()
-		require("mytilus").setup(
+		require("mytilus.configs").setup(
 			{
-				theme    = 'light',
+				theme    = 'light밝은',
 				options  = {
-					
+					str = { bold = true },
+					keyword = { bold = true, italic = true },
+					func = { italic = true },
+					comment = { italic = true }
+					-- comment 주석
+
+
+
 				},
 				overides = {}
 			}

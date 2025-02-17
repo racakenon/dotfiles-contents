@@ -74,7 +74,7 @@ zsh_indicator  = "%"
 nu_indicator   = ">"
 fish_indicator = ""
 style          = 'bold fg:v1_white bg:bar0'
-format         = '[| $indicator ]($style)'
+format         = '[| $indicator  ]($style)'
 
 [fill]
 symbol = ' '

@@ -10,8 +10,10 @@ if status is-interactive
 	set -x MANPAGER "nvim +Man!"
 	set -x EDITOR "nvim"
 	set -x PAGER "nvim -R -c 'nnoremap q :lclose<CR>:q<CR>'"
+	fnm env --use-on-cd --shell fish | source
 end
 
 if status is-login 
 	niri --session
 end
+
