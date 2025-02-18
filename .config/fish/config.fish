@@ -4,10 +4,13 @@ if status is-interactive
 		starship init fish | source
 	end
 	if type -q vivid
-		set -U LS_COLORS $(vivid generate $HOME/.config/vivid/mytilus_light.yml)
+		set -x LS_COLORS $(vivid generate $HOME/.config/vivid/mytilus_light.yml)
 	end
 	if type -q fnm
 		fnm env --use-on-cd --shell fish | source
+	end
+	if type -q zoxide
+		zoxide init fish --cmd cd | source
 	end
 	set -U fish_greeting
 	fish_add_path $HOME/.cargo/bin/
