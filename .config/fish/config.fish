@@ -12,6 +12,13 @@ if status is-interactive
 	if type -q zoxide
 		zoxide init fish --cmd cd | source
 	end
+	if type -q sccache
+		set -x RUSTC_WRAPPER "sccache"
+		set -x CC "sccache gcc"
+		set -x CXX "sccache g++"
+		set -x AR "sccache ar"
+		set -x RANLIB "sccache ranlib"
+	end
 	set -U fish_greeting
 	fish_add_path $HOME/.cargo/bin/
 	fish_add_path $HOME/.ghcup/bin/
