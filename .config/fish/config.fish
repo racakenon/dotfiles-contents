@@ -13,7 +13,6 @@ if status is-interactive
 		zoxide init fish --cmd cd | source
 	end
 	if type -q sccache
-		set -x RUSTC_WRAPPER "sccache"
 		set -x CC "sc-gcc"
 		set -x CXX "sc-g++"
 	end
