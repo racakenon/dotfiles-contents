@@ -5,9 +5,16 @@ return {
 	config = function()
 		require("mytilus.configs").setup(
 			{
-				theme    = 'light',
+				theme    = 'light밝은',
 				options  = {
-					
+					str = { bold = true },
+					keyword = { bold = true, italic = true },
+					func = { italic = true },
+					comment = { italic = true }
+					-- comment 주석
+
+
+
 				},
 				overides = {}
 			}
