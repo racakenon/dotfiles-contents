@@ -3,7 +3,7 @@ return {
 	priority = 1000,
 	lazy = false,
 	config = function()
-		require("mytilus").setup(
+		require("mytilus.configs").setup(
 			{
 				theme    = 'light',
 				options  = {
