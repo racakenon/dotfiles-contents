@@ -8,7 +8,7 @@ layout {
     border {
         off
     }
-	default-column-width { proportion 0.5; }
+	default-column-width { proportion 1.0; }
 	insert-hint {
 		off
 	}
@@ -55,11 +55,11 @@ animations {
 }
 
 binds {
-    Mod+Shift+W  { spawn "wezterm"; }
-    Mod+Shift+M  { spawn "~/.config/niri/waydroid"; }
+    Mod+Shift+4  { spawn "wezterm"; }
+    Mod+Shift+3  { spawn "~/.config/niri/waydroid"; }
+    Mod+Shift+5 { spawn "vivaldi"; }
     Mod+Shift+R  { spawn "~/.config/niri/record";}
     Mod+Shift+S  { spawn "pkill" "wl-screenrec"; }
-    Mod+Shift+V { spawn "vivaldi"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     Mod+Shift+Q { quit skip-confirmation=true; }
