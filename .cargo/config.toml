@@ -1,5 +1,5 @@
 [build]
-rustc-wrapper = "sccache"
+# rustc-wrapper = "sccache"
 
 [env]
 CC_x86_64_unknown_linux_gnu = "gcc"
