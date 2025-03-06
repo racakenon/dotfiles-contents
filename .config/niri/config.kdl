@@ -58,6 +58,7 @@ binds {
     Mod+Shift+4  { spawn "wezterm"; }
     Mod+Shift+3  { spawn "~/.config/niri/waydroid"; }
     Mod+Shift+5 { spawn "vivaldi"; }
+    Mod+Shift+6 { spawn "sirula"; }
     Mod+Shift+R  { spawn "~/.config/niri/record";}
     Mod+Shift+S  { spawn "pkill" "wl-screenrec"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
