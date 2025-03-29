@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=tana
+Comment=The Everything OS
+GenericName=tana
+Exec=tana --ozone-platform=wayland --enable-wayland-ime --wayland-text-input-version=3 %U
+Icon=tana
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;
+MimeType=x-scheme-handler/tana;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=capacities
+Exec=capacities --ozone-platform=wayland --enable-wayland-ime --wayland-text-input-version=3 --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=capacities
+StartupWMClass=capacities
+X-AppImage-Version=1.46.1
+Comment=capacities
+MimeType=x-scheme-handler/capacities;
+Categories=Education;
