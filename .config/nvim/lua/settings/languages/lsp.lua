@@ -1,13 +1,6 @@
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(ev)
 		local opts = { buf = ev.buf }
-		vim.keymap.del('n', 'K', { buffer = ev.buf })
-		vim.keymap.del('n', 'grn')
-		vim.keymap.del('n', 'gra')
-		vim.keymap.del('n', 'grr')
-		vim.keymap.del('n', 'gri')
-		vim.keymap.del('n', 'gO')
-		vim.keymap.del('i', '<C-S>')
 		vim.api.nvim_set_option_value("formatexpr", "v:lua.vim.lsp.formatexpr()", opts)
 		vim.api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", opts)
 		vim.api.nvim_set_option_value("tagfunc", "v:lua.vim.lsp.tagfunc", opts)
@@ -33,6 +26,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.keymap.del('n', ']d')
 vim.keymap.del('n', '[d')
 
+vim.keymap.del('n', 'grn')
+vim.keymap.del('n', 'gra')
+vim.keymap.del('n', 'grr')
+vim.keymap.del('n', 'gri')
+vim.keymap.del('n', 'gO')
+vim.keymap.del('i', '<C-S>')
 vim.keymap.set('n', ']d', function()
 	vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = 'Jump to the next diagnostic' })
@@ -59,22 +58,12 @@ vim.diagnostic.config({
 
 local M = {}
 
-function M.setup(filetype, name, root_files, cmd, settings)
-	vim.api.nvim_create_autocmd('FileType', {
-		pattern = filetype,
-		callback = function(args)
-			local root_dir = vim.fs.root(args.buf, root_files)
-			if vim.bo.buftype == "" then
-				vim.lsp.start(vim.tbl_deep_extend('keep', {
-					name = name,
-					cmd = cmd,
-					root_dir = root_dir,
-					capabilities = vim.tbl_deep_extend('keep', vim.lsp.protocol.make_client_capabilities(),
-						require('cmp_nvim_lsp').default_capabilities()),
-				}, settings))
-			end
-		end
-	})
+function M.setup(name, settings)
+	vim.lsp.config[name] = vim.tbl_deep_extend('keep', {
+		capabilities = vim.tbl_deep_extend('keep', vim.lsp.protocol.make_client_capabilities(),
+			require('cmp_nvim_lsp').default_capabilities()),
+	}, settings)
+	vim.lsp.enable(name)
 end
 
 return M
