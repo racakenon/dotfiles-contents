@@ -8,7 +8,7 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = racagogi@gmail.com
-	name = racagogi
+	email = racakenon@gmail.com
+	name = racakenon
 [pull]
 	rebase = false
