@@ -26,6 +26,7 @@ if status is-interactive
 	set -x MANPAGER "nvim +Man!"
 	set -x EDITOR "nvim"
 	set -x PAGER "nvim -R -c 'nnoremap q :lclose<CR>:q<CR>'"
+	set -x XMODIFIERS @im=kime
 end
 
 if status is-login 
