@@ -18,6 +18,7 @@ if status is-interactive
 	end
 	set -U fish_greeting
 	fish_add_path $HOME/.cargo/bin/
+	fish_add_path $HOME/.yarn/bin/
 	fish_add_path $HOME/.ghcup/bin/
 	fish_add_path $HOME/.cabal/bin/
 	fish_add_path $HOME/.local/bin/
@@ -26,6 +27,13 @@ if status is-interactive
 	set -x MANPAGER "nvim +Man!"
 	set -x EDITOR "nvim"
 	set -x PAGER "nvim -R -c 'nnoremap q :lclose<CR>:q<CR>'"
+
+	# pnpm
+	set -gx PNPM_HOME "/home/raca/.local/share/pnpm"
+	if not string match -q -- $PNPM_HOME $PATH
+		set -gx PATH "$PNPM_HOME" $PATH
+	end
+	# pnpm end
 end
 
 if status is-login 
@@ -33,3 +41,4 @@ if status is-login
 		niri --session
 	end
 end
+
