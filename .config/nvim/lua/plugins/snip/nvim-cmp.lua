@@ -13,7 +13,13 @@ return {
 		local cmp = require 'cmp'
 		local luasnip = require("luasnip")
 		local lspkind = require('lspkind')
+
+
 		cmp.setup {
+			preselect = cmp.PreselectMode.None,
+			completion = {
+				completeopt = 'menu,menuone,noinsert,noselect',
+			},
 			snippet = {
 				expand = function(args)
 					require('luasnip').lsp_expand(args.body)
@@ -52,26 +58,21 @@ return {
 						fallback()
 					end
 				end),
-				["<C-n>"] = cmp.mapping(function(fallback)
+				["<C-t>"] = function() if luasnip.locally_jumpable(1) then luasnip.jump(1) end end,
+				["<C-p>"] = function() if luasnip.locally_jumpable(-1) then luasnip.jump(-1) end end,
+				["<C-n>"] = cmp.mapping(function()
 					if cmp.visible() then
 						cmp.select_next_item()
-					elseif luasnip.locally_jumpable(1) then
-						luasnip.jump(1)
-					else
-						fallback()
 					end
 				end, { "i", "s" }),
-				["<C-p>"] = cmp.mapping(function(fallback)
+				["<C-l>"] = cmp.mapping(function()
 					if cmp.visible() then
 						cmp.select_prev_item()
-					elseif luasnip.locally_jumpable(-1) then
-						luasnip.jump(-1)
-					else
-						fallback()
 					end
 				end, { "i", "s" }),
 				['<C-d>'] = cmp.mapping.scroll_docs(-4),
 				['<C-f>'] = cmp.mapping.scroll_docs(4),
+				["<C-b>"]   = cmp.mapping.abort(),
 			},
 			sources = {
 				{ name = 'nvim_lsp' },
