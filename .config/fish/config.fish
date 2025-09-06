@@ -26,7 +26,7 @@ if status is-interactive
 	fish_add_path $HOME/.local/ttfautohint/bin
 	set -x MANPAGER "nvim +Man!"
 	set -x EDITOR "nvim"
-	set -x PAGER "nvim -R -c 'nnoremap q :lclose<CR>:q<CR>'"
+	set -x PAGER "nvim -R -" 
 	set -x XMODIFIERS @im=kime
 
 	# pnpm

@@ -12,3 +12,5 @@
 	name = racakenon
 [pull]
 	rebase = true
+[core]
+	editor = nvim
