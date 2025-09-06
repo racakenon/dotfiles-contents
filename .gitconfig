@@ -11,4 +11,4 @@
 	email = racakenon@gmail.com
 	name = racakenon
 [pull]
-	rebase = false
+	rebase = true
