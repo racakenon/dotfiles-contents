@@ -11,3 +11,7 @@ bold = { family = "TermSans", style = "Bold" }
 italic = { family = "TermSerif", style = "Regular" }
 bold_italic = { family = "TermSerif", style = "Bold" }
 size = 18.0
+
+[cursor]
+style = {shape = "Beam", blinking = "Never"}
+unfocused_hollow = false
