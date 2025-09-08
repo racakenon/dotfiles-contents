@@ -1,0 +1,178 @@
+confirm-before-quit = false
+hide-cursor-when-typing = true 
+theme="mytilus_light"
+
+# Padding-x
+#
+# define x axis padding (default is 0)
+#
+# Example:
+padding-x = 0
+
+# Padding-y
+#
+# define y axis padding based on a format [top, bottom]
+# (default is [0, 0])
+#
+# Example:
+# padding-y = [30, 10]
+
+# Option as Alt
+#
+# This config only works on MacOS.
+# Possible choices: 'both', 'left' and 'right'.
+#
+# Example:
+# option-as-alt = 'left'
+
+# Line height
+#
+# This option will apply an modifier to line-height
+# Default is `1.0`
+#
+# Example:
+# line-height = 1.2
+
+# Startup directory
+#
+# Directory the shell is started in. If this is unset the working
+# directory of the parent process will be used.
+#
+# This configuration only has effect if use-fork is disabled.
+#
+# Example:
+# working-dir = "/Users/raphael/Documents/"
+
+# Environment variables
+#
+# Example:
+# env-vars = []
+
+# [cursor]
+# shape = 'block'
+# blinking = false
+# blinking-interval = 800
+
+# Editor
+#
+# Default editor on Linux and MacOS is "vi",
+# on Windows it is "notepad".
+#
+# Whenever the key binding `OpenConfigEditor` is triggered it will
+# use the value of the editor along with the rio configuration path.
+# [editor]
+# program = "vi"
+# args = []
+
+# Window configuration
+#
+# • width - define the initial window width.
+#   Default: 600
+#
+# • height - define the initial window height.
+#   Default: 400
+#
+# • mode - define how the window will be created
+#     - "Windowed" (default) is based on width and height
+#     - "Maximized" window is created with maximized
+#     - "Fullscreen" window is created with fullscreen
+#
+# • opacity - Set window opacity
+#
+# • blur - Set blur on the window background. Changing this config requires restarting Rio to take effect.
+#
+# • decorations - Set window decorations, options: "Enabled", "Disabled", "Transparent", "Buttonless"
+#
+# • colorspace - Set the color space for the window
+#     - "srgb" (default on non-macOS)
+#     - "display-p3" (default on macOS)
+#     - "rec2020"
+#
+# Example:
+[window]
+mode = "windowed"
+opacity = 1.0
+blur = false
+decorations = "Disabled"
+
+[keyboard]
+ime-cursor-positioning = true
+
+[fonts]
+size = 24 
+
+
+[fonts.regular]
+family = 'TermSans'
+style = "Normal"
+weight = 400
+features = [ 'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss09', 'liga', ]
+
+[fonts.bold]
+family = 'TermSans'
+style = "Normal"
+weight = 800
+features = [ 'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss09', 'liga', ]
+
+[fonts.italic]
+family = 'TermSerif'
+style = "Normal"
+weight = 400
+features = [ 'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss09', 'liga', ]
+
+[fonts.bold-italic]
+family = 'TermSerif'
+style = "Normal"
+weight = 800
+features = [ 'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss09', 'liga', ]
+
+[colors]
+background                      = "#E8E9DE"
+dim-foreground                  = "#39363F"
+foreground                      = "#403E47"
+light-foreground                = "#504E57"
+
+black                           = "#403E47"
+red                             = "#5A3336"
+green                           = "#0F4B39"
+yellow                          = "#4C3F03"
+blue                            = "#334059"
+magenta                         = "#4B374E"
+cyan                            = "#124850"
+white                           = "#404138"
+
+dim-black                       = "#39363F"
+dim-red                         = "#5A3336"
+dim-green                       = "#0F4B39"
+dim-yellow                      = "#4C3F03"
+dim-blue                        = "#334059"
+dim-magenta                     = "#4B374E"
+dim-cyan                        = "#124850"
+dim-white                       = "#383930"
+
+light-black                     = "#504E57"
+light-red                       = "#6F4046"
+light-green                     = "#155D49"
+light-yellow                    = "#5F4E09"
+light-blue                      = "#404F6F"
+light-magenta                   = "#5E4663"
+light-cyan                      = "#185965"
+light-white                     = "#505147"
+
+cursor                          = "#48464F"
+vi-cursor                       = "#155D49"
+
+tabs                            = "#48464F"
+tabs-active                     = "#48464F"
+tabs-active-highlight           = "#48464F"
+tabs-active-foreground          = "#F5F6EB"
+tabs-foreground                 = "#403E47"
+bar                             = "#DCD9E4"
+
+search-match-background         = "#CBDBFA"
+search-match-foreground         = "#403E47"
+search-focused-match-background = "#5E4663"
+search-focused-match-foreground = "#F5F6EB"
+
+selection-background            = "#CECFC4"
+selection-foreground            = "#403E47"
