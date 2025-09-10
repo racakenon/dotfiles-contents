@@ -94,9 +94,7 @@ local function search_to_number(config)
 	return function(pattern)
 		local pattern_text, search_options = string.sub(pattern, 2, -2), "n"
 		if not config.forward then search_options = "bn" end
-		local line_number = vim.api.nvim_call_function("searchpos", {
-			pattern_text, search_options
-		})[1]
+		local line_number = vim.fn.searchpos(pattern_text, search_options)[1]
 		return line_number
 	end
 end
@@ -128,7 +126,7 @@ local function get_range_number(cmd)
 
 	if not result.start_range then
 		v.nvim_buf_clear_namespace(0, ns, 0, -1)
-		vim.cmd("redraw")
+		vim.cmd.redraw()
 		return -1, -1
 	end
 
@@ -204,7 +202,7 @@ local function add_highlight()
 	cache[1], cache[2] = start_line, end_line
 
 	vim.highlight.range(0, ns, "Visual", { start_line, 0 }, { end_line, 0 })
-	vim.api.nvim__redraw({ flush = true })
+	vim.cmd.redraw()
 end
 
 vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
