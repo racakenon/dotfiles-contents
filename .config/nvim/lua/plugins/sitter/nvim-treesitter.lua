@@ -5,7 +5,7 @@ return {
 			ensure_installed = "all",
 			sync_install = false,
 			auto_install = true,
-			ignore_install = {},
+			ignore_install = {"ipkg"},
 			modules = {},
 			highlight = {
 				enable = true,
