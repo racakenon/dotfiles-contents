@@ -26,6 +26,10 @@ local function should_center()
 end
 
 local function center_now()
+	local mode = api.nvim_get_mode().mode
+	if mode:match("^[isS]") then
+		return
+	end
 	api.nvim_win_call(0, function()
 		vim.cmd("normal! zz")
 	end)
