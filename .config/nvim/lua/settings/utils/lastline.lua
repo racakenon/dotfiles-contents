@@ -1,35 +1,56 @@
-local fn = vim.fn
-vim.api.nvim_create_autocmd("BufRead", {
-    callback = function(opts)
-        vim.api.nvim_create_autocmd("BufWinEnter", {
-            buffer = opts.buf,
-            callback = function()
-                local ignore_buftype = { "quickfix", "nofile", "help" }
-                local ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" }
-                local open_folds = 1
-                if vim.tbl_contains(ignore_buftype, vim.api.nvim_get_option_value("buftype", {})) or
-                    vim.tbl_contains(ignore_filetype, vim.api.nvim_get_option_value("filetype", {})) or
-                    fn.line(".") > 1
-                then
-                    return
-                end
-                local last_line = fn.line([['"]])
-                local buff_last_line = fn.line("$")
-                local window_last_line = fn.line("w$")
-                local window_first_line = fn.line("w0")
-                if last_line > 0 and last_line <= buff_last_line then
-                    if window_last_line == buff_last_line then
-                        vim.api.nvim_command([[keepjumps normal! g`"]])
-                    elseif buff_last_line - last_line > ((window_last_line - window_first_line) / 2) - 1 then
-                        vim.api.nvim_command([[keepjumps normal! g`"zz]])
-                    else
-                        vim.api.nvim_command([[keepjumps normal! G'"<c-e>]])
-                    end
-                end
-                if fn.foldclosed(fn.line(".")) ~= -1 and open_folds == 1 then
-                    vim.api.nvim_command([[normal! zvzz]])
-                end
-            end,
-        })
-    end,
+local api, fn = vim.api, vim.fn
+
+
+local IGNORE_BUFTYPE = {
+	nofile = true,
+	terminal = true,
+	prompt = true,
+	quickfix = true,
+}
+
+local OPEN_FOLDS = true
+
+local function is_supported_buf(buf)
+	local bt = api.nvim_get_option_value("buftype", { buf = buf })
+	return not IGNORE_BUFTYPE[bt]
+end
+
+
+local function jump_to_last_position(buf)
+	local pos = api.nvim_buf_get_mark(buf, '"')
+	local row = pos and pos[1] or 0
+	if row <= 0 or row > api.nvim_buf_line_count(buf) then
+		return
+	end
+
+	vim.cmd([[silent! keepjumps normal! g`"]])
+
+	if OPEN_FOLDS then
+		vim.cmd([[silent! normal! zv]])
+	end
+end
+
+
+local group = api.nvim_create_augroup("utils_lastline_restore_once", { clear = true })
+
+api.nvim_create_autocmd("BufWinEnter", {
+	group = group,
+	pattern = "*",
+	callback = function(opts)
+		if not is_supported_buf(opts.buf) then
+			return
+		end
+
+		if vim.b[opts.buf].__lastline_done then
+			return
+		end
+		vim.b[opts.buf].__lastline_done = true
+
+
+		vim.schedule(function()
+			if api.nvim_buf_is_loaded(opts.buf) then
+				jump_to_last_position(opts.buf)
+			end
+		end)
+	end,
 })
