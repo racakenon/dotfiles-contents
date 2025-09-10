@@ -1,4 +1,7 @@
-function ll --wraps='eza -lh' --description 'alias ll=eza -lh'
-  eza -lh $argv
-        
+function ll
+  if type -q eza
+    eza -lh $argv
+  else
+    command ls -lh $argv
+  end
 end
