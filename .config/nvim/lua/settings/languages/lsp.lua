@@ -58,12 +58,24 @@ vim.diagnostic.config({
 
 local M = {}
 
-function M.setup(name, settings)
+--[[ function M.setup(name, settings)
 	vim.lsp.config[name] = vim.tbl_deep_extend('keep', {
 		capabilities = vim.tbl_deep_extend('keep', vim.lsp.protocol.make_client_capabilities(),
 			require('cmp_nvim_lsp').default_capabilities()),
 	}, settings)
 	vim.lsp.enable(name)
-end
+end ]]
 
+function M.setup(name, settings)
+    local cmd = settings.cmd and settings.cmd[1]
+    if cmd and vim.fn.executable(cmd) == 0 then
+        return
+    end
+    
+    vim.lsp.config[name] = vim.tbl_deep_extend('keep', {
+        capabilities = vim.tbl_deep_extend('keep', vim.lsp.protocol.make_client_capabilities(),
+            require('cmp_nvim_lsp').default_capabilities()),
+    }, settings)
+    vim.lsp.enable(name)
+end
 return M
