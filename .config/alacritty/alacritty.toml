@@ -11,7 +11,13 @@ bold = { family = "TermSans", style = "Bold" }
 italic = { family = "TermSerif", style = "Regular" }
 bold_italic = { family = "TermSerif", style = "Bold" }
 size = 18.0
+# offset = {x=0,y=0}
+# glyph_offset = {x=0,y=2}
+builtin_box_drawing =  false
 
 [cursor]
 style = {shape = "Beam", blinking = "Never"}
 unfocused_hollow = false
+
+[mouse]
+hide_when_typing = true

@@ -55,7 +55,8 @@ animations {
 }
 
 binds {
-    Mod+Shift+3  { spawn "~/.config/niri/waydroid"; }
+    Mod+Shift+2  { spawn "~/.config/niri/waydroid"; }
+    Mod+Shift+3  { spawn "gtk-launch" "tana"; }
     Mod+Shift+4  { spawn "alacritty"; }
     Mod+Shift+5 { spawn "vivaldi"; }
     Mod+Shift+6 { spawn "sirula"; }
