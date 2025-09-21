@@ -83,8 +83,11 @@ if status is-interactive
 	fish_add_path $HOME/.ghcup/bin/
 	fish_add_path $HOME/.cabal/bin/
 	fish_add_path $HOME/.local/bin/
-	fish_add_path $HOME/.local/racket/bin
-	fish_add_path $HOME/.local/ttfautohint/bin
+	for dir in $HOME/.local/*/bin
+		if test -d "$dir"
+			fish_add_path "$dir"
+		end
+	end
 	set -x MANPAGER "nvim +Man!"
 	set -x EDITOR "nvim"
 	set -x PAGER "nvim -R -" 
