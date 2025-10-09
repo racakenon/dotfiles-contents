@@ -14,3 +14,5 @@
 	rebase = true
 [core]
 	editor = nvim
+[alias]
+	track-all = config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
