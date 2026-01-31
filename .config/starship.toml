@@ -9,6 +9,7 @@ $git_commit\
 $git_status\
 $fill\
 $cmd_duration\
+$conda\
 $python\
 $time\
 $status
@@ -158,3 +159,8 @@ fish_style_pwd_dir_length = 2
 read_only_style           = 'bold fg:d1_black bg:bar1'
 style                     = 'bold fg:d1_black bg:bar1'
 format                    = '[ $read_only($read_only_style)$path ]($style)'
+
+[conda]
+ignore_base = false
+style                     = 'bold fg:d1_black bg:bar1'
+format = '[ conda: $environment ]($style)'

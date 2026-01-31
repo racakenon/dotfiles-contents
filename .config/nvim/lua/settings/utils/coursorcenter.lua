@@ -26,13 +26,20 @@ local function should_center()
 end
 
 local function center_now()
-	local mode = api.nvim_get_mode().mode
-	if mode:match("^[isS]") then
-		return
-	end
-	api.nvim_win_call(0, function()
-		vim.cmd("normal! zz")
-	end)
+    if not api.nvim_win_is_valid(0) or not is_supported_buf(api.nvim_get_current_buf()) then
+        return
+    end
+
+    local mode = api.nvim_get_mode().mode
+    if mode:match("^[isStV\22]") or mode == 't' then
+        return
+    end
+
+    pcall(function()
+        api.nvim_win_call(0, function()
+            vim.cmd("normal! zz")
+        end)
+    end)
 end
 
 local function debounced_center()
@@ -69,7 +76,9 @@ api.nvim_create_autocmd({ "CursorMoved" }, {
 api.nvim_create_autocmd({ "WinEnter", "WinLeave" }, {
 	group = group,
 	pattern = "*",
-	callback = function()
+	callback = function(opts)
+		if not is_supported_buf(opts.buf) then return end
+
 		center_now()
 		if timer and not timer:is_closing() then
 			timer:stop()

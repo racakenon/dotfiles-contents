@@ -11,3 +11,4 @@ end
 load_setting("languages")
 load_setting("utils")
 load_setting("options")
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {noremap = true})

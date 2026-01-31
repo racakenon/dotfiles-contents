@@ -84,10 +84,11 @@ if status is-interactive
 	fish_add_path $HOME/.cabal/bin/
 	fish_add_path $HOME/.local/bin/
 	for dir in $HOME/.local/*/bin
-		if test -d "$dir"
+		if test -d "$dir"; and not string match -q "*conda*" "$dir"
 			fish_add_path "$dir"
 		end
 	end
+	eval $HOME/.local/miniconda3/bin/conda "shell.fish" "hook" | source
 	set -x MANPAGER "nvim +Man!"
 	set -x EDITOR "nvim"
 	set -x PAGER "nvim -R -" 
