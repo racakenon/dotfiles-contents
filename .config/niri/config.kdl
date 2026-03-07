@@ -24,6 +24,17 @@ window-rule {
 	default-column-width { proportion 0.5;}
 }
 
+
+window-rule {
+	match app-id="^*Emulator*"
+	open-floating true
+}
+
+window-rule {
+	match title="kime-candidate"
+	open-floating true
+}
+
 output "DP-2" {
 	scale 1.5
 	position x=0 y=0
@@ -94,5 +105,6 @@ binds {
 	Mod+Right { focus-column-right; }
 	Mod+Comma  { consume-window-into-column; }
 	Mod+Period { expel-window-from-column; }
+	Mod+Shift+W { toggle-window-floating;}
 }
 

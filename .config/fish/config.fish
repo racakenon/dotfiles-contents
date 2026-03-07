@@ -93,6 +93,10 @@ if status is-interactive
 	set -x EDITOR "nvim"
 	set -x PAGER "nvim -R -" 
 	set -x XMODIFIERS @im=kime
+	set -gx JAVA_HOME "$HOME/.local/android-studio/jbr"
+	set -gx ANDROID_HOME "$HOME/.assdk"
+	set -gx NDK_HOME "$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+	set -gx QT_QPA_PLATFORM xcb
 
 	# pnpm
 	set -gx PNPM_HOME "/home/raca/.local/share/pnpm"
