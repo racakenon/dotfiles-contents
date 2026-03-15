@@ -107,6 +107,9 @@ if status is-interactive
 end
 
 if status is-login 
+	if type -q gnome-keyring-daemon
+		gnome-keyring-daemon --start --components=secrets
+	end
 	if type -q niri
 		niri --session
 	end
