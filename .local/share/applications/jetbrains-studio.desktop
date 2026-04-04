@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Android Studio
+Icon=/home/raca/.local/android-studio/bin/studio.svg
+Exec="/home/raca/.local/android-studio/bin/studio" %f
+Comment=The Drive to Develop
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-studio
+StartupNotify=true
