@@ -1,4 +1,4 @@
-function la 
+function la
 	if type -q eza
 		eza -lAh $argv
 	else

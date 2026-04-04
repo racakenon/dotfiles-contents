@@ -3,7 +3,10 @@ local function load_setting(dir)
 	for fname in vim.fs.dir(path) do
 		local n = fname:match("^(.*)%.lua$")
 		if n ~= nil then
-			pcall(require, "settings" .. "." .. dir .. "." .. n)
+			local ok, err = pcall(require, "settings" .. "." .. dir .. "." .. n)
+			if not ok then
+				vim.notify("settings." .. dir .. "." .. n .. ": " .. tostring(err), vim.log.levels.WARN)
+			end
 		end
 	end
 end

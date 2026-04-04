@@ -47,7 +47,7 @@ local function debounced_center()
 		timer:stop()
 		timer:close()
 	end
-	timer = vim.loop.new_timer()
+	timer = vim.uv.new_timer()
 	timer:start(DEBOUNCE_MS, 0, function()
 		vim.schedule(function()
 			if api.nvim_win_is_valid(0) and should_center() then

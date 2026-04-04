@@ -47,16 +47,6 @@ cyan = "#124850"
 white = "#E8E9DE"
 
 [colors.bright]
-black = "#504E57"
-red = "#FECCCF"
-green = "#B0EAD2"
-yellow = "#EADBA3"
-blue = "#CBDBFA"
-magenta = "#EAD1ED"
-cyan = "#B0E5F0"
-white = "#F5F6EB"
-
-[colors.dim]
 black = "#39363F"
 red = "#6F4046"
 green = "#155D49"
@@ -65,3 +55,13 @@ blue = "#404F6F"
 magenta = "#5E4663"
 cyan = "#185965"
 white = "#CECFC4"
+
+[colors.dim]
+black = "#504E57"
+red = "#FECCCF"
+green = "#B0EAD2"
+yellow = "#EADBA3"
+blue = "#CBDBFA"
+magenta = "#EAD1ED"
+cyan = "#B0E5F0"
+white = "#F5F6EB"

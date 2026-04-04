@@ -14,14 +14,14 @@ ansi = [
 ]
 
 brights = [
-    "504E57",
-    "FECCCF",
-    "B0EAD2",
-    "EADBA3",
-    "CBDBFA",
-    "EAD1ED",
-    "B0E5F0",
-    "F5F6EB",
+    "39363F",
+    "6F4046",
+    "155D49",
+    "5F4E09",
+    "404F6F",
+    "5E4663",
+    "185965",
+    "CECFC4",
 ]
 
 compose_cursor  = "48464F"

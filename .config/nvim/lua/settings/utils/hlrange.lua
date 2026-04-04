@@ -102,12 +102,11 @@ end
 local forward_search_to_number = search_to_number { forward = true }
 local backward_search_to_number = search_to_number { forward = false }
 
-local v = vim.api
-local ns = v.nvim_create_namespace("range-highlight")
+local ns = vim.api.nvim_create_namespace("range-highlight")
 local cache = {}
 
 local function cleanup()
-	v.nvim_buf_clear_namespace(0, ns, 0, -1)
+	vim.api.nvim_buf_clear_namespace(0, ns, 0, -1)
 	cache = {}
 end
 
@@ -125,7 +124,7 @@ local function get_range_number(cmd)
 	local result = parse_cmd(cmd)
 
 	if not result.start_range then
-		v.nvim_buf_clear_namespace(0, ns, 0, -1)
+		vim.api.nvim_buf_clear_namespace(0, ns, 0, -1)
 		vim.cmd.redraw()
 		return -1, -1
 	end
@@ -195,7 +194,7 @@ local function add_highlight()
 
 	if cache[1] and cache[2] then
 		if cache[1] ~= start_line or cache[2] ~= end_line then
-			v.nvim_buf_clear_namespace(0, ns, cache[1], cache[2])
+			vim.api.nvim_buf_clear_namespace(0, ns, cache[1], cache[2])
 		end
 	end
 

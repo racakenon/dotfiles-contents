@@ -1,3 +1,5 @@
+local has_nvim_011 = vim.fn.has 'nvim-0.11' == 1
+
 local function create_tinymist_command(command_name, client, bufnr)
 	local export_type = command_name:match 'tinymist%.export(%w+)'
 	local info_type = command_name:match 'tinymist%.(%w+)'
@@ -6,6 +8,9 @@ local function create_tinymist_command(command_name, client, bufnr)
 	end
 	local cmd_display = export_type or info_type
 	local function run_tinymist_command()
+		if not has_nvim_011 then
+			return vim.notify('Tinymist commands require Neovim 0.11+', vim.log.levels.WARN)
+		end
 		local arguments = { vim.api.nvim_buf_get_name(bufnr) }
 		local title_str = export_type and ('Export ' .. cmd_display) or cmd_display
 		---@type lsp.Handler
@@ -16,16 +21,11 @@ local function create_tinymist_command(command_name, client, bufnr)
 			-- If exporting, show the string result; else, show the table for inspection
 			vim.notify(export_type and res or vim.inspect(res), vim.log.levels.INFO)
 		end
-		if vim.fn.has 'nvim-0.11' == 1 then
-			-- For Neovim 0.11+
-			return client:exec_cmd({
-				title = title_str,
-				command = command_name,
-				arguments = arguments,
-			}, { bufnr = bufnr }, handler)
-		else
-			return vim.notify('Tinymist commands require Neovim 0.11+', vim.log.levels.WARN)
-		end
+		return client:exec_cmd({
+			title = title_str,
+			command = command_name,
+			arguments = arguments,
+		}, { bufnr = bufnr }, handler)
 	end
 	-- Construct a readable command name/desc
 	local cmd_name = export_type and ('LspTinymistExport' .. cmd_display) or

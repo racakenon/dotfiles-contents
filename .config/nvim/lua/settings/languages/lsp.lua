@@ -14,7 +14,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '<space>i', vim.lsp.buf.implementation, opts)
 		vim.keymap.set('n', '<space>D', vim.lsp.buf.declaration, opts)
 		vim.keymap.set({ 'n', 'v' }, '<space>a', vim.lsp.buf.code_action, opts)
-		vim.keymap.set('n', '<space>r', vim.lsp.buf.references, opts)
 		vim.keymap.set({ 'n', 'i' }, '<space>s', vim.lsp.buf.signature_help, opts)
 		vim.keymap.set('n', '<space>w', vim.lsp.buf.add_workspace_folder, opts)
 		vim.keymap.set('n', '<space>f', function()
