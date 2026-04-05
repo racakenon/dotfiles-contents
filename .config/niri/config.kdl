@@ -61,7 +61,8 @@ hotkey-overlay {
 spawn-at-startup "kime" "-D"
 spawn-at-startup "udiskie" "--no-appindicator"
 spawn-at-startup  "waydroid" "session" "start"
-spawn-at-startup  "swww-daemon"
+spawn-at-startup  "awww-daemon"
+spawn-at-startup "gnome-keyring-daemon"
 spawn-at-startup  "~/.config/niri/wallpaper"
 
 
