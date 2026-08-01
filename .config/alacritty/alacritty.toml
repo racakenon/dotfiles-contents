@@ -6,10 +6,10 @@ live_config_reload = true
 decorations = "None"
 
 [font]
-normal = { family = "TermSans", style = "Regular" }
-bold = { family = "TermSans", style = "Bold" }
-italic = { family = "TermSerif", style = "Regular" }
-bold_italic = { family = "TermSerif", style = "Bold" }
+normal = { family = "TermMain", style = "Regular" }
+bold = { family = "TermMain", style = "Bold" }
+italic = { family = "TermAlt", style = "Regular" }
+bold_italic = { family = "TermAlt", style = "Bold" }
 size = 18.0
 # offset = {x=0,y=0}
 # glyph_offset = {x=0,y=2}
